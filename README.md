@@ -204,6 +204,20 @@ Dieses Repository repraesentiert den wiederverwendbaren Skill-Kern:
 
 Nicht enthalten sind persoenliche Vault-Inhalte, private Quellen, lokale Obsidian-Einstellungen oder projektspezifische Wissensdatenbanken.
 
+## CLAUDE.md – Claude Code Integration
+
+Dieses Repository enthaelt eine `CLAUDE.md` fuer Claude Code. Sie steuert, wie der Agent bei Wissensfragen vorgeht:
+
+```md
+# Claude Anweisungen
+
+Wenn der User eine Frage zu seinem Wissen stellt oder etwas sucht, schau zuerst welche Brains
+es unter `D:\Brains\` gibt, lies die `wiki\index.md` der passenden Brains und folge dem
+Query-Skill unter `{brain}\.claude\skills\second-brain-query\SKILL.md`.
+```
+
+**Was das bewirkt:** Statt allgemein zu antworten, navigiert Claude Code zuerst durch den lokalen Brain-Graphen und zieht seine Antworten aus dem konkreten Wissensbestand. So bleibt jede Antwort an echte, selbst gepflegte Quellen gebunden.
+
 ## Hinweis
 
 Diese Skills erzeugen und pflegen lokale Wissensgraphen. Die Qualitaet der Antworten haengt von den eingepflegten Quellen, der Konsistenz des Wikis und regelmaessigen Lint-Pruefungen ab. Fuer fachlich verbindliche Entscheidungen sollten relevante Originalquellen immer mitgeprueft werden.
