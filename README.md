@@ -131,14 +131,10 @@ Agent:  Laut [[karpathy-llm-wiki]] wird Wissen einmal verdichtet und nur noch
 
 | | Lose Notizen | Chat mit Dokumenten (RAG) | Dieses System |
 |---|---|---|---|
-| Wissen wird verdichtet | nein, nur gesammelt | nein, jede Frage startet bei null | ja, einmal pro Quelle |
-| Aussagen mit Beleg | nur wenn du es pflegst | Textstellen, ohne Struktur | `[[Wikilinks]]` auf Seiten |
-| Widersprüche zwischen Quellen | fallen nicht auf | fallen nicht auf | Lint meldet sie |
-| Ergebnis lesbar ohne KI | ja | nein | ja, reines Markdown in Obsidian |
-| Gute Antworten bleiben erhalten | nein | nein | als Synthese-Seite |
-| Aufwand | hoch (du pflegst alles) | niedrig | mittel (du bestätigst, der Agent schreibt) |
-
-**Grenze:** Ohne `qmd` wird die Suche ab etwa 100 Seiten langsamer, weil der Agent den Index sonst komplett scannt.
+| Wissen wird verdichtet | nein | nein, jede Frage startet bei null | ja, einmal pro Quelle |
+| Aussagen mit Beleg | nur manuell | Textstellen, ohne Struktur | `[[Wikilinks]]` |
+| Widersprüche erkennen | nein | nein | Lint meldet sie |
+| Lesbar ohne KI | ja | nein | ja, reines Markdown |
 
 ## Unter der Haube
 
