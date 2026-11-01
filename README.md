@@ -57,48 +57,7 @@ Dann in Claude Code (oder einem anderen Agenten mit Skill-Pfad):
 
 ## 🔍 Was dabei herauskommt
 
-Eine einzige Datei geht rein:
-
-```text
-raw/karpathy-llm-wiki.md        ← Web-Clip, unverändert
-```
-
-Nach `second-brain-ingest` sieht dein Vault so aus (Beispiel):
-
-```text
-wiki/
-├── sources/
-│   └── karpathy-llm-wiki.md    ← Zusammenfassung + Kernaussagen
-├── entities/
-│   └── Andrej Karpathy.md      ← Person, neu angelegt
-├── concepts/
-│   └── LLM Wiki Pattern.md     ← Konzept, neu angelegt
-├── index.md                    ← Master-Katalog, 3 neue Einträge
-└── log.md                      ← "## [2026-11-01] ingest | Karpathy LLM Wiki"
-```
-
-Und so sieht eine erzeugte Seite aus:
-
-```markdown
----
-tags: [llm, wissensmanagement]
-sources: [karpathy-llm-wiki.md]
-created: 2026-11-01
-updated: 2026-11-01
----
-
-# LLM Wiki Pattern
-
-Ein Agent pflegt ein Markdown-Wiki, statt bei jeder Frage Rohtexte neu zu durchsuchen.
-
-## Aus den Quellen
-- Wissen wird einmal verdichtet und danach nur noch erweitert ([[karpathy-llm-wiki]])
-
-## Verbunden mit
-- [[Andrej Karpathy]]
-```
-
-Jede weitere Quelle ergänzt diese Seiten. Widersprüche werden mit beiden Quellen vermerkt, nicht überschrieben.
+<p align="center"><img src="assets/vault.svg" alt="Dateibaum nach dem Ingest: eine Quelle in raw/, dazu neue Seiten in sources, entities und concepts, mit Vorschau der Konzeptseite" width="900"></p>
 
 ## 💬 So fühlt sich das an
 
