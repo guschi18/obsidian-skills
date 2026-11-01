@@ -12,7 +12,7 @@ git clone https://github.com/guschi18/obsidian-skills.git && cp -r obsidian-skil
 
 <p align="center">
 
-[**⚡ Starten**](#-in-60-sekunden-starten) · [🔍 Ergebnis](#-was-dabei-herauskommt) · [💬 Session](#-so-fühlt-sich-das-an) · [🧩 Skills](#enthaltene-skills) · [❓ FAQ](#-faq)
+[**⚡ Starten**](#-in-60-sekunden-starten) · [🔍 Ergebnis](#-was-dabei-herauskommt) · [🩺 Lint](#-lint-in-aktion) · [🧩 Skills](#enthaltene-skills) · [❓ FAQ](#-faq)
 
 </p>
 
@@ -56,20 +56,11 @@ Dann in Claude Code (oder einem anderen Agenten mit Skill-Pfad):
 
 <p align="center"><img src="assets/vault.svg" alt="Dateibaum nach dem Ingest: eine Quelle in raw/, dazu neue Seiten in sources, entities und concepts, mit Vorschau der Konzeptseite" width="900"></p>
 
-## 💬 So fühlt sich das an
+## 🩺 Lint in Aktion
 
-```text
-Du:     Ich habe karpathy-llm-wiki.md in raw/ gelegt.
-Agent:  Kernaussagen: 1. Wissen wird einmal verdichtet. 2. Ein Agent pflegt Index
-        und Querverweise. Soll ich etwas betonen?
-Du:     Betone Punkt 2.
-Agent:  Fertig: 1 Quellenseite, 1 Entität, 1 Konzept, Index und Log aktualisiert.
+<p align="center"><img src="assets/lint.svg" alt="Beispiel für second-brain-lint: Ein Scan prüft die Wiki-Seiten und meldet einen Fehler, eine Warnung und einen Hinweis" width="900"></p>
 
-Du:     Was weiß ich über das LLM Wiki Pattern?
-Agent:  Laut [[karpathy-llm-wiki]] wird Wissen einmal verdichtet und nur noch
-        erweitert, siehe [[LLM Wiki Pattern]] und [[Andrej Karpathy]].
-        Als Synthese-Seite speichern?
-```
+Nach etwa zehn Ingests laufen lassen. Lint meldet auch Widersprüche zwischen Quellen und veraltete Aussagen.
 
 ## Enthaltene Skills
 
