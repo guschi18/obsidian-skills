@@ -181,42 +181,21 @@ Optionale Tools: Obsidian Web Clipper (Quellen nach `raw/`), `summarize`, `qmd` 
 <details>
 <summary><b>Braucht es Obsidian?</b></summary>
 
-Nein. Das Ergebnis ist reines Markdown mit `[[Wikilinks]]`. Obsidian zeigt den Graphen und die Rückverweise am besten an, der Agent arbeitet aber nur mit Dateien.
+Nein. Das Ergebnis ist reines Markdown mit `[[Wikilinks]]`. Obsidian zeigt nur den Graphen schöner an.
 
 </details>
 
 <details>
-<summary><b>Kann der Agent meine Originalquellen verändern?</b></summary>
+<summary><b>Kann der Agent meine Quellen verändern?</b></summary>
 
-Nein. Das Schema verbietet jede Änderung in `raw/`. Das Log in `wiki/log.md` ist append-only, bestehende Einträge bleiben stehen.
-
-</details>
-
-<details>
-<summary><b>Woher weiß Ingest, was neu ist?</b></summary>
-
-Er vergleicht die Dateien in `raw/` (ohne `raw/assets/`) mit den `ingest`-Einträgen in `wiki/log.md`. Alles, was dort fehlt, gilt als unverarbeitet.
+Nein. `raw/` ist unveränderlich, `wiki/log.md` ist append-only.
 
 </details>
 
 <details>
-<summary><b>Wann lohnt sich Lint?</b></summary>
+<summary><b>Wann lohnt sich Lint, wann `qmd`?</b></summary>
 
-Nach etwa zehn Ingests, mindestens monatlich und vor größeren Analysen.
-
-</details>
-
-<details>
-<summary><b>Die Suche wird langsam. Was tun?</b></summary>
-
-Ab etwa 100 Seiten `qmd` installieren (`npm i -g @tobilu/qmd`). Query nutzt es automatisch, wenn es vorhanden ist.
-
-</details>
-
-<details>
-<summary><b>Läuft das auch mit Codex, Cursor oder Gemini CLI?</b></summary>
-
-Ja. Der Wizard erzeugt `AGENTS.md`, `.cursor/rules/second-brain.mdc` oder `GEMINI.md` aus demselben Schema. Die Skill-Ordner müssen im Skill-Pfad des jeweiligen Agenten liegen.
+Lint nach etwa zehn Ingests. `qmd` (`npm i -g @tobilu/qmd`) ab etwa 100 Seiten. Query nutzt es automatisch.
 
 </details>
 
@@ -228,10 +207,4 @@ Ja. Der Wizard erzeugt `AGENTS.md`, `.cursor/rules/second-brain.mdc` oder `GEMIN
 
 Gefällt dir das Setup? Ein ⭐ auf GitHub hilft anderen, es zu finden.
 
-## Nicht enthalten
-
-Persönliche Vault-Inhalte, private Quellen, lokale Obsidian-Einstellungen und projektspezifische Wissensdatenbanken.
-
-## Hinweis
-
-Die Qualität der Antworten hängt von den eingepflegten Quellen, der Konsistenz des Wikis und regelmäßigen Lint-Prüfungen ab. Für fachlich verbindliche Entscheidungen prüfe die Originalquellen mit.
+*Antworten sind nur so gut wie deine Quellen. Prüfe bei wichtigen Entscheidungen die Originale.*
