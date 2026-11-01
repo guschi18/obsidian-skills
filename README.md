@@ -32,6 +32,8 @@ git clone https://github.com/guschi18/obsidian-skills.git && cp -r obsidian-skil
 | `second-brain` | `second-brain-ingest` | `second-brain-query` | `second-brain-lint` |
 | Vault anlegen | `raw/` → `wiki/` | Antwort mit Belegen | Fehler und Lücken finden |
 
+<p align="center"><img src="assets/demo.svg" alt="Animation: Eine Quelle landet in raw/, ingest baut verlinkte Wiki-Seiten, eine Frage wird mit Quellenbelegen beantwortet" width="900"></p>
+
 ## ⚡ In 60 Sekunden starten
 
 ```bash

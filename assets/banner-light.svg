@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-label="Second Brain Skills: aus raw/ wird ein verlinktes wiki/">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f5f3ff"/>
+      <stop offset="1" stop-color="#e0e7ff"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.78" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#a78bfa" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="320" rx="20" fill="url(#bg)"/>
+  <rect width="1200" height="320" rx="20" fill="url(#glow)"/>
+
+  <!-- Titel -->
+  <text x="64" y="128" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="54" font-weight="700" fill="#1e1b4b">Second Brain Skills</text>
+  <text x="64" y="172" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="22" fill="#6d28d9">Quellen rein. Verlinktes Wiki raus.</text>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" font-weight="600">
+    <rect x="64"  y="212" width="92"  height="32" rx="16" fill="#7c3aed"/><text x="110" y="233" fill="#fff" text-anchor="middle">ingest</text>
+    <rect x="166" y="212" width="92"  height="32" rx="16" fill="#2563eb"/><text x="212" y="233" fill="#fff" text-anchor="middle">query</text>
+    <rect x="268" y="212" width="80"  height="32" rx="16" fill="#0d9488"/><text x="308" y="233" fill="#fff" text-anchor="middle">lint</text>
+  </g>
+
+  <!-- Wissensgraph -->
+  <g stroke="#a78bfa" stroke-opacity="0.65" stroke-width="2" fill="none" stroke-dasharray="6 6">
+    <animate attributeName="stroke-dashoffset" from="24" to="0" dur="1.6s" repeatCount="indefinite"/>
+    <path d="M700 160 L820 90"/><path d="M700 160 L830 220"/><path d="M820 90 L960 130"/>
+    <path d="M830 220 L960 130"/><path d="M960 130 L1080 70"/><path d="M960 130 L1090 200"/>
+    <path d="M820 90 L900 40"/><path d="M830 220 L920 280"/><path d="M1080 70 L1090 200"/>
+  </g>
+  <g>
+    <rect x="652" y="138" width="96" height="44" rx="10" fill="#e2e8f0" stroke="#64748b"/>
+    <text x="700" y="166" font-family="Consolas, monospace" font-size="16" fill="#1e293b" text-anchor="middle">raw/</text>
+    <circle cx="820" cy="90" r="16" fill="#7c3aed"><animate attributeName="r" values="16;19;16" dur="2.5s" repeatCount="indefinite"/></circle>
+    <circle cx="830" cy="220" r="16" fill="#7c3aed"><animate attributeName="r" values="16;19;16" dur="3.0s" repeatCount="indefinite"/></circle>
+    <circle cx="960" cy="130" r="22" fill="#2563eb"><animate attributeName="r" values="22;25;22" dur="2.0s" repeatCount="indefinite"/></circle>
+    <circle cx="1080" cy="70" r="14" fill="#0d9488"><animate attributeName="r" values="14;17;14" dur="2.0s" repeatCount="indefinite"/></circle>
+    <circle cx="1090" cy="200" r="18" fill="#0d9488"><animate attributeName="r" values="18;21;18" dur="2.5s" repeatCount="indefinite"/></circle>
+    <circle cx="900" cy="40" r="9" fill="#c4b5fd"><animate attributeName="r" values="9;12;9" dur="2.0s" repeatCount="indefinite"/></circle>
+    <circle cx="920" cy="280" r="9" fill="#c4b5fd"><animate attributeName="r" values="9;12;9" dur="3.0s" repeatCount="indefinite"/></circle>
+  </g>
+  <g font-family="Consolas, monospace" font-size="13" fill="#4c1d95">
+    <text x="842" y="84">[[Konzept]]</text>
+    <text x="852" y="244">[[Quelle]]</text>
+    <text x="986" y="124">[[Index]]</text>
+    <text x="975" y="44">[[Entität]]</text>
+  </g>
+  <!-- Datenpakete: raw/ wird zu Wiki -->
+  <circle r="5" fill="#f59e0b"><animateMotion dur="2.4s" repeatCount="indefinite" path="M700 160 L820 90 L960 130 L1080 70"/></circle>
+  <circle r="5" fill="#f59e0b"><animateMotion dur="2.4s" begin="1.2s" repeatCount="indefinite" path="M700 160 L830 220 L960 130 L1090 200"/></circle>
+</svg>
