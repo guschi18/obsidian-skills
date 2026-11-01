@@ -31,13 +31,10 @@ git clone https://github.com/guschi18/obsidian-skills.git && cp -r obsidian-skil
 
 ## ⚡ In 60 Sekunden starten
 
-```bash
-git clone https://github.com/guschi18/obsidian-skills.git
-cp -r obsidian-skills/second-brain* ~/.claude/skills/
-```
+<p align="center"><img src="assets/terminal.svg" alt="Terminal: git clone, Skills nach ~/.claude/skills kopieren, in Claude Code „Richte ein Second Brain ein“ sagen, der Wizard legt den Vault an" width="900"></p>
 
 <details>
-<summary>Windows (PowerShell)</summary>
+<summary>Windows (PowerShell) statt bash</summary>
 
 ```powershell
 git clone https://github.com/guschi18/obsidian-skills.git
