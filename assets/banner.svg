@@ -22,7 +22,8 @@
   </g>
 
   <!-- Wissensgraph -->
-  <g stroke="#a78bfa" stroke-opacity="0.55" stroke-width="2" fill="none">
+  <g stroke="#a78bfa" stroke-opacity="0.65" stroke-width="2" fill="none" stroke-dasharray="6 6">
+    <animate attributeName="stroke-dashoffset" from="24" to="0" dur="1.6s" repeatCount="indefinite"/>
     <path d="M700 160 L820 90"/><path d="M700 160 L830 220"/><path d="M820 90 L960 130"/>
     <path d="M830 220 L960 130"/><path d="M960 130 L1080 70"/><path d="M960 130 L1090 200"/>
     <path d="M820 90 L900 40"/><path d="M830 220 L920 280"/><path d="M1080 70 L1090 200"/>
@@ -30,13 +31,13 @@
   <g>
     <rect x="652" y="138" width="96" height="44" rx="10" fill="#334155" stroke="#94a3b8"/>
     <text x="700" y="166" font-family="Consolas, monospace" font-size="16" fill="#e2e8f0" text-anchor="middle">raw/</text>
-    <circle cx="820" cy="90"  r="16" fill="#7c3aed"/>
-    <circle cx="830" cy="220" r="16" fill="#7c3aed"/>
-    <circle cx="960" cy="130" r="22" fill="#2563eb"/>
-    <circle cx="1080" cy="70"  r="14" fill="#0d9488"/>
-    <circle cx="1090" cy="200" r="18" fill="#0d9488"/>
-    <circle cx="900" cy="40"  r="9" fill="#c4b5fd"/>
-    <circle cx="920" cy="280" r="9" fill="#c4b5fd"/>
+    <circle cx="820" cy="90" r="16" fill="#7c3aed"><animate attributeName="r" values="16;19;16" dur="2.5s" repeatCount="indefinite"/></circle>
+    <circle cx="830" cy="220" r="16" fill="#7c3aed"><animate attributeName="r" values="16;19;16" dur="3.0s" repeatCount="indefinite"/></circle>
+    <circle cx="960" cy="130" r="22" fill="#2563eb"><animate attributeName="r" values="22;25;22" dur="2.0s" repeatCount="indefinite"/></circle>
+    <circle cx="1080" cy="70" r="14" fill="#0d9488"><animate attributeName="r" values="14;17;14" dur="2.0s" repeatCount="indefinite"/></circle>
+    <circle cx="1090" cy="200" r="18" fill="#0d9488"><animate attributeName="r" values="18;21;18" dur="2.5s" repeatCount="indefinite"/></circle>
+    <circle cx="900" cy="40" r="9" fill="#c4b5fd"><animate attributeName="r" values="9;12;9" dur="2.0s" repeatCount="indefinite"/></circle>
+    <circle cx="920" cy="280" r="9" fill="#c4b5fd"><animate attributeName="r" values="9;12;9" dur="3.0s" repeatCount="indefinite"/></circle>
   </g>
   <g font-family="Consolas, monospace" font-size="13" fill="#ddd6fe">
     <text x="842" y="84">[[Konzept]]</text>
@@ -44,4 +45,7 @@
     <text x="986" y="124">[[Index]]</text>
     <text x="975" y="44">[[Entität]]</text>
   </g>
+  <!-- Datenpakete: raw/ wird zu Wiki -->
+  <circle r="5" fill="#fde68a"><animateMotion dur="2.4s" repeatCount="indefinite" path="M700 160 L820 90 L960 130 L1080 70"/></circle>
+  <circle r="5" fill="#fde68a"><animateMotion dur="2.4s" begin="1.2s" repeatCount="indefinite" path="M700 160 L830 220 L960 130 L1090 200"/></circle>
 </svg>
