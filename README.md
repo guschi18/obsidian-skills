@@ -6,21 +6,23 @@
   Du befragst ihn, er meldet Widersprüche.
 </p>
 
+<p align="center">
+  <img alt="Obsidian" src="https://img.shields.io/badge/Obsidian-Vault-7C3AED?style=for-the-badge&logo=obsidian&logoColor=white">
+  <img alt="4 Skills" src="https://img.shields.io/badge/Skills-4-2563EB?style=for-the-badge">
+  <img alt="Agenten" src="https://img.shields.io/badge/Claude_Code_·_Codex_·_Cursor_·_Gemini-0D9488?style=for-the-badge">
+</p>
+
+<p align="center">
+  <a href="#-in-60-sekunden-starten"><img alt="⚡ Starten" src="https://img.shields.io/badge/⚡_Starten-7C3AED?style=for-the-badge"></a>
+  <a href="#-was-dabei-herauskommt"><img alt="🔍 Ergebnis" src="https://img.shields.io/badge/🔍_Ergebnis-1E1B4B?style=for-the-badge"></a>
+  <a href="#-lint-in-aktion"><img alt="🩺 Lint" src="https://img.shields.io/badge/🩺_Lint-1E1B4B?style=for-the-badge"></a>
+  <a href="#enthaltene-skills"><img alt="🧩 Skills" src="https://img.shields.io/badge/🧩_Skills-1E1B4B?style=for-the-badge"></a>
+  <a href="#-faq"><img alt="❓ FAQ" src="https://img.shields.io/badge/❓_FAQ-1E1B4B?style=for-the-badge"></a>
+</p>
+
 ```bash
 git clone https://github.com/guschi18/obsidian-skills.git && cp -r obsidian-skills/second-brain* ~/.claude/skills/
 ```
-
-<p align="center">
-
-[**⚡ Starten**](#-in-60-sekunden-starten) · [🔍 Ergebnis](#-was-dabei-herauskommt) · [🩺 Lint](#-lint-in-aktion) · [🧩 Skills](#enthaltene-skills) · [❓ FAQ](#-faq)
-
-</p>
-
-<p align="center">
-  <img alt="Obsidian" src="https://img.shields.io/badge/obsidian-vault-7C3AED">
-  <img alt="Skills" src="https://img.shields.io/badge/skills-4-2563EB">
-  <img alt="Sprache" src="https://img.shields.io/badge/language-DE%20%7C%20EN-111827">
-</p>
 
 | 🪄 **Einrichten** | 📥 **Befüllen** | 💬 **Abfragen** | 🩺 **Verbessern** |
 |:---:|:---:|:---:|:---:|
