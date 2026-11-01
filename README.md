@@ -141,14 +141,48 @@ Dadurch wird aus einzelnen Artikeln, Transkripten, PDFs oder Notizen ein navigie
 
 ## Enthaltene Skills
 
-| Skill | Rolle | Wofür er wichtig ist |
-|---|---|---|
-| `second-brain` | Onboarding Wizard | Erstellt einen neuen Obsidian-Vault mit Verzeichnisstruktur, Index, Log und Agent-Konfigurationen |
-| `second-brain-ingest` | Quellenverarbeitung | Verarbeitet Dateien aus `raw/` zu Quellen-, Entitäten- und Konzeptseiten im Wiki |
-| `second-brain-query` | Wissensabfrage | Beantwortet Fragen gegen `wiki/index.md`, Wiki-Seiten und optional lokale Suche mit `qmd` |
-| `second-brain-lint` | Qualitätsprüfung | Findet kaputte Wikilinks, Waisen-Seiten, Widersprüche, veraltete Claims und fehlende Querverweise |
+<table>
+<tr>
+<td width="50%" valign="top">
 
-Zusammen bilden diese Skills einen vollständigen Arbeitszyklus: **einrichten, befüllen, abfragen, verbessern**.
+### 🪄 `second-brain`
+**Einmal einrichten.**
+Wizard fragt Name, Ort, Thema, Agenten und Tools. Erzeugt `raw/`, `wiki/`, `output/`, Index, Log und die Agent-Konfiguration.
+
+*Auslöser:* „onboard", „Second Brain einrichten", „Vault anlegen"
+
+</td>
+<td width="50%" valign="top">
+
+### 📥 `second-brain-ingest`
+**Quellen verdichten.**
+Liest `raw/`, bespricht die Kernaussagen mit dir und baut Quellen-, Entitäts- und Konzeptseiten. Erkennt neue Dateien über `wiki/log.md`.
+
+*Auslöser:* „ingest", „ich habe etwas in raw/ abgelegt"
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 💬 `second-brain-query`
+**Fragen beantworten.**
+Startet beim Index, folgt Wikilinks, zitiert Wiki-Seiten. Bei großen Wikis mit `qmd`. Speichert gute Antworten als Synthese.
+
+*Auslöser:* „was weiß ich über X?"
+
+</td>
+<td width="50%" valign="top">
+
+### 🩺 `second-brain-lint`
+**Wiki prüfen.**
+Acht Checks: kaputte Links, Waisenseiten, Widersprüche, veraltete Aussagen, fehlende Seiten, Querverweise, Index, Lücken. Bericht nach Schwere.
+
+*Auslöser:* „health check", „lint", „audit"
+
+</td>
+</tr>
+</table>
 
 ## Perfekt für
 
