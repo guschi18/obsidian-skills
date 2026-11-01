@@ -20,6 +20,31 @@ flowchart LR
 
 **Einrichten → befüllen → abfragen → verbessern.** Rohe Quellen bleiben unverändert. Das Wissen wächst in `wiki/`.
 
+## ⚡ In 60 Sekunden starten
+
+```bash
+git clone https://github.com/guschi18/obsidian-skills.git
+cp -r obsidian-skills/second-brain* ~/.claude/skills/
+```
+
+<details>
+<summary>Windows (PowerShell)</summary>
+
+```powershell
+git clone https://github.com/guschi18/obsidian-skills.git
+Copy-Item -Recurse obsidian-skills\second-brain* $HOME\.claude\skills```
+
+</details>
+
+Dann in Claude Code (oder einem anderen Agenten mit Skill-Pfad):
+
+| Du sagst | Es passiert |
+|---|---|
+| „Richte ein Second Brain ein" | Wizard legt den Vault an (Name, Ort, Thema, Agent-Configs) |
+| „Ich habe etwas in `raw/` gelegt" | Ingest fasst zusammen, fragt nach Schwerpunkten, baut Wiki-Seiten |
+| „Was weiß ich über X?" | Query antwortet aus dem Wiki, jede Aussage mit `[[Wikilink]]` belegt |
+| „Mach einen Health-Check" | Lint listet Fehler, Warnungen und Lücken, auf Wunsch mit Fixes |
+
 ## Worum es geht
 
 Dieses Repository enthält lokale Skills für den Aufbau und die Pflege eines Obsidian-basierten Second Brains. Es ist kein fertiger Notizbestand, sondern ein Werkzeugkasten: Die Skills helfen dabei, einen neuen Vault zu initialisieren, Quellen zu verarbeiten, Fragen gegen das Wiki zu beantworten und die Qualität des Wissensgraphen regelmäßig zu prüfen.
@@ -155,13 +180,9 @@ Alle Templates verwenden dasselbe `wiki-schema.md`. Dadurch arbeiten verschieden
 - Welche Themen sind häufig erwähnt, aber noch nicht gut ausgearbeitet?
 - Welche Synthese sollte aus den vorhandenen Notizen gespeichert werden?
 
-## Quickstart - In 3 Schritten einsatzbereit
+## Quickstart im Detail
 
-### Schritt 1 - Skills installieren oder in den Skill-Pfad legen
-
-Dieses Repository ist als lokales Skill-Verzeichnis gedacht. Die Ordner `second-brain`, `second-brain-ingest`, `second-brain-query` und `second-brain-lint` müssen im Skill-Pfad des verwendeten Agenten liegen.
-
-### Schritt 2 - Neuen Vault initialisieren
+### Schritt 1 - Neuen Vault initialisieren
 
 Starte den Skill `second-brain`. Der Wizard fragt nacheinander:
 
@@ -186,7 +207,7 @@ wiki/index.md
 wiki/log.md
 ```
 
-### Schritt 3 - Quellen verarbeiten und abfragen
+### Schritt 2 - Quellen verarbeiten und abfragen
 
 Lege Quellen in `raw/` ab und führe danach `second-brain-ingest` aus. Sobald die ersten Wiki-Seiten entstanden sind, kann `second-brain-query` Fragen gegen den lokalen Wissensbestand beantworten.
 
