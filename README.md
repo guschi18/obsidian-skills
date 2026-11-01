@@ -3,14 +3,17 @@
 # 🧠 Second Brain Skills
 
 > **Wirf Quellen rein. Bekomm ein Wiki raus, das sich selbst pflegt.**
-> Vier Agent-Skills verwandeln PDFs, Artikel und Transkripte in einen verlinkten Obsidian-Wissensgraphen, den du befragen kannst und der dir Widersprüche meldet.
+> Vier Agent-Skills machen aus PDFs, Artikeln und Transkripten einen verlinkten Obsidian-Wissensgraphen. Du befragst ihn, er meldet Widersprüche.
 
-![Status](https://img.shields.io/badge/status-active-brightgreen)
+```bash
+git clone https://github.com/guschi18/obsidian-skills.git && cp -r obsidian-skills/second-brain* ~/.claude/skills/
+```
+
+[**⚡ Starten**](#-in-60-sekunden-starten) · [🔍 Ergebnis](#-was-dabei-herauskommt) · [💬 Session](#-so-fühlt-sich-das-an) · [🧩 Skills](#enthaltene-skills) · [❓ FAQ](#-faq)
+
 ![Obsidian](https://img.shields.io/badge/obsidian-vault-7C3AED)
 ![Skills](https://img.shields.io/badge/skills-4-2563EB)
 ![Language](https://img.shields.io/badge/language-DE%20%7C%20EN-111827)
-
-[Starten](#-in-60-sekunden-starten) · [Ergebnis](#-was-dabei-herauskommt) · [Beispiel-Session](#-so-fühlt-sich-das-an) · [Skills](#enthaltene-skills) · [Unter der Haube](#unter-der-haube)
 
 ```mermaid
 flowchart LR
