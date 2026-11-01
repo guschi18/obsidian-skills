@@ -1,3 +1,5 @@
+<p align="center"><img src="assets/banner.svg" alt="Second Brain Skills: Quellen rein, verlinktes Wiki raus" width="100%"></p>
+
 # 🧠 Second Brain Skills
 
 > **Wirf Quellen rein. Bekomm ein Wiki raus, das sich selbst pflegt.**
