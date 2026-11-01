@@ -1,13 +1,24 @@
 # 🧠 Second Brain Skills
 
-> **Vier Skills. Ein Schema. Ein lokaler Wissensgraph.**
-> Obsidian * Markdown * LLM-Workflows - aufgebaut als wiederverwendbares Skill-Set für persönliche Knowledge Bases.
-> Die strukturierte Arbeitsgrundlage, um rohe Quellen in ein verlinktes, wartbares Second Brain zu verwandeln.
+> **Wirf Quellen rein. Bekomm ein Wiki raus, das sich selbst pflegt.**
+> Vier Agent-Skills verwandeln PDFs, Artikel und Transkripte in einen verlinkten Obsidian-Wissensgraphen, den du befragen kannst und der dir Widersprüche meldet.
 
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
 ![Obsidian](https://img.shields.io/badge/obsidian-vault-7C3AED)
 ![Skills](https://img.shields.io/badge/skills-4-2563EB)
 ![Language](https://img.shields.io/badge/language-DE%20%7C%20EN-111827)
+
+```mermaid
+flowchart LR
+    A["📥 raw/<br/>Artikel, PDFs, Transkripte"] -->|second-brain-ingest| B["🕸️ wiki/<br/>verlinkte Seiten"]
+    B -->|second-brain-query| C["💬 Antworten<br/>mit Quellenbelegen"]
+    C -.->|"wertvolle Antworten speichern"| B
+    B -->|second-brain-lint| D["🩺 Gesundheitsbericht"]
+    D -.->|Fixes| B
+    S["🪄 second-brain<br/>einmalig: Vault anlegen"] --> A
+```
+
+**Einrichten → befüllen → abfragen → verbessern.** Rohe Quellen bleiben unverändert. Das Wissen wächst in `wiki/`.
 
 ## Worum es geht
 
@@ -30,7 +41,7 @@ Dadurch wird aus einzelnen Artikeln, Transkripten, PDFs oder Notizen ein navigie
 | `second-brain` | Onboarding Wizard | Erstellt einen neuen Obsidian-Vault mit Verzeichnisstruktur, Index, Log und Agent-Konfigurationen |
 | `second-brain-ingest` | Quellenverarbeitung | Verarbeitet Dateien aus `raw/` zu Quellen-, Entitäten- und Konzeptseiten im Wiki |
 | `second-brain-query` | Wissensabfrage | Beantwortet Fragen gegen `wiki/index.md`, Wiki-Seiten und optional lokale Suche mit `qmd` |
-| `second-brain-lint` | Qualitätspruefung | Findet kaputte Wikilinks, Waisen-Seiten, Widersprueche, veraltete Claims und fehlende Querverweise |
+| `second-brain-lint` | Qualitätsprüfung | Findet kaputte Wikilinks, Waisen-Seiten, Widersprüche, veraltete Claims und fehlende Querverweise |
 
 Zusammen bilden diese Skills einen vollständigen Arbeitszyklus: **einrichten, befüllen, abfragen, verbessern**.
 
