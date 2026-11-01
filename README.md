@@ -325,6 +325,14 @@ Ja. Der Wizard erzeugt `AGENTS.md`, `.cursor/rules/second-brain.mdc` oder `GEMIN
 
 </details>
 
+## 🚀 Dein erstes Brain in drei Sätzen
+
+1. **„Richte ein Second Brain ein."** Der Wizard legt den Vault an.
+2. **Leg einen Artikel in `raw/`** (am schnellsten mit dem Obsidian Web Clipper) und sag: **„Ingest."**
+3. **Frag: „Was weiß ich über …?"** Du bekommst eine Antwort mit Quellenbelegen.
+
+Gefällt dir das Setup? Ein ⭐ auf GitHub hilft anderen, es zu finden.
+
 ## Nicht enthalten
 
 Persönliche Vault-Inhalte, private Quellen, lokale Obsidian-Einstellungen und projektspezifische Wissensdatenbanken.
