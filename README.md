@@ -1,9 +1,4 @@
-<h1 align="center">
-  <picture>
-    <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.svg">
-    <img src="assets/banner.svg" alt="Second Brain Skills: Quellen rein, verlinktes Wiki raus" width="100%">
-  </picture>
-</h1>
+<h1 align="center"><img src="assets/banner.svg" alt="Second Brain Skills: Quellen rein, verlinktes Wiki raus" width="900"></h1>
 
 <p align="center">
   <b>Wirf Quellen rein. Bekomm ein Wiki raus, das sich selbst pflegt.</b><br>
@@ -11,36 +6,32 @@
   Du befragst ihn, er meldet Widersprüche.
 </p>
 
+<p align="center">
+  <img alt="Obsidian" src="https://img.shields.io/badge/Obsidian-Vault-7C3AED?style=for-the-badge&logo=obsidian&logoColor=white">
+  <img alt="4 Skills" src="https://img.shields.io/badge/Skills-4-2563EB?style=for-the-badge">
+  <img alt="Agenten" src="https://img.shields.io/badge/Claude_Code_·_Codex_·_Cursor_·_Gemini-0D9488?style=for-the-badge">
+</p>
+
+<p align="center">
+  <a href="#-in-60-sekunden-starten"><img alt="⚡ Starten" src="https://img.shields.io/badge/⚡_Starten-7C3AED?style=for-the-badge"></a>
+  <a href="#-was-dabei-herauskommt"><img alt="🔍 Ergebnis" src="https://img.shields.io/badge/🔍_Ergebnis-1E1B4B?style=for-the-badge"></a>
+  <a href="#-lint-in-aktion"><img alt="🩺 Lint" src="https://img.shields.io/badge/🩺_Lint-1E1B4B?style=for-the-badge"></a>
+  <a href="#enthaltene-skills"><img alt="🧩 Skills" src="https://img.shields.io/badge/🧩_Skills-1E1B4B?style=for-the-badge"></a>
+  <a href="#-faq"><img alt="❓ FAQ" src="https://img.shields.io/badge/❓_FAQ-1E1B4B?style=for-the-badge"></a>
+</p>
+
 ```bash
 git clone https://github.com/guschi18/obsidian-skills.git && cp -r obsidian-skills/second-brain* ~/.claude/skills/
 ```
 
-<p align="center">
-
-[**⚡ Starten**](#-in-60-sekunden-starten) · [🔍 Ergebnis](#-was-dabei-herauskommt) · [💬 Session](#-so-fühlt-sich-das-an) · [🧩 Skills](#enthaltene-skills) · [❓ FAQ](#-faq)
-
-</p>
-
-<p align="center">
-  <img alt="Obsidian" src="https://img.shields.io/badge/obsidian-vault-7C3AED">
-  <img alt="Skills" src="https://img.shields.io/badge/skills-4-2563EB">
-  <img alt="Sprache" src="https://img.shields.io/badge/language-DE%20%7C%20EN-111827">
-</p>
-
-| 🪄 **Einrichten** | 📥 **Befüllen** | 💬 **Abfragen** | 🩺 **Verbessern** |
-|:---:|:---:|:---:|:---:|
-| `second-brain` | `second-brain-ingest` | `second-brain-query` | `second-brain-lint` |
-| Vault anlegen | `raw/` → `wiki/` | Antwort mit Belegen | Fehler und Lücken finden |
+<p align="center"><img src="assets/demo.svg" alt="Animation: Eine Quelle landet in raw/, ingest baut verlinkte Wiki-Seiten, eine Frage wird mit Quellenbelegen beantwortet" width="900"></p>
 
 ## ⚡ In 60 Sekunden starten
 
-```bash
-git clone https://github.com/guschi18/obsidian-skills.git
-cp -r obsidian-skills/second-brain* ~/.claude/skills/
-```
+<p align="center"><img src="assets/terminal.svg" alt="Terminal: git clone, Skills nach ~/.claude/skills kopieren, in Claude Code „Richte ein Second Brain ein“ sagen, der Wizard legt den Vault an" width="900"></p>
 
 <details>
-<summary>Windows (PowerShell)</summary>
+<summary>Windows (PowerShell) statt bash</summary>
 
 ```powershell
 git clone https://github.com/guschi18/obsidian-skills.git
@@ -60,81 +51,21 @@ Dann in Claude Code (oder einem anderen Agenten mit Skill-Pfad):
 
 ## 🔍 Was dabei herauskommt
 
-Eine einzige Datei geht rein:
+<p align="center"><img src="assets/vault.svg" alt="Dateibaum nach dem Ingest: eine Quelle in raw/, dazu neue Seiten in sources, entities und concepts, mit Vorschau der Konzeptseite" width="900"></p>
 
-```text
-raw/karpathy-llm-wiki.md        ← Web-Clip, unverändert
-```
+## 🩺 Lint in Aktion
 
-Nach `second-brain-ingest` sieht dein Vault so aus (Beispiel):
+<p align="center"><img src="assets/lint.svg" alt="Beispiel für second-brain-lint: Ein Scan prüft die Wiki-Seiten und meldet einen Fehler, eine Warnung und einen Hinweis" width="900"></p>
 
-```text
-wiki/
-├── sources/
-│   └── karpathy-llm-wiki.md    ← Zusammenfassung + Kernaussagen
-├── entities/
-│   └── Andrej Karpathy.md      ← Person, neu angelegt
-├── concepts/
-│   └── LLM Wiki Pattern.md     ← Konzept, neu angelegt
-├── index.md                    ← Master-Katalog, 3 neue Einträge
-└── log.md                      ← "## [2026-11-01] ingest | Karpathy LLM Wiki"
-```
-
-Und so sieht eine erzeugte Seite aus:
-
-```markdown
----
-tags: [llm, wissensmanagement]
-sources: [karpathy-llm-wiki.md]
-created: 2026-11-01
-updated: 2026-11-01
----
-
-# LLM Wiki Pattern
-
-Ein Agent pflegt ein Markdown-Wiki, statt bei jeder Frage Rohtexte neu zu durchsuchen.
-
-## Aus den Quellen
-- Wissen wird einmal verdichtet und danach nur noch erweitert ([[karpathy-llm-wiki]])
-
-## Verbunden mit
-- [[Andrej Karpathy]]
-```
-
-Jede weitere Quelle ergänzt diese Seiten. Widersprüche werden mit beiden Quellen vermerkt, nicht überschrieben.
-
-## 💬 So fühlt sich das an
-
-```text
-Du:     Ich habe karpathy-llm-wiki.md in raw/ gelegt.
-Agent:  Kernaussagen: 1. Wissen wird einmal verdichtet. 2. Ein Agent pflegt Index
-        und Querverweise. Soll ich etwas betonen?
-Du:     Betone Punkt 2.
-Agent:  Fertig: 1 Quellenseite, 1 Entität, 1 Konzept, Index und Log aktualisiert.
-
-Du:     Was weiß ich über das LLM Wiki Pattern?
-Agent:  Laut [[karpathy-llm-wiki]] wird Wissen einmal verdichtet und nur noch
-        erweitert, siehe [[LLM Wiki Pattern]] und [[Andrej Karpathy]].
-        Als Synthese-Seite speichern?
-```
+Nach etwa zehn Ingests laufen lassen. Lint meldet auch Widersprüche zwischen Quellen und veraltete Aussagen.
 
 ## Enthaltene Skills
 
-| Skill | Macht | Auslöser |
-|---|---|---|
-| 🪄 `second-brain` | Legt den Vault an: Ordner, Index, Log, Agent-Config | „Second Brain einrichten" |
-| 📥 `second-brain-ingest` | Fasst `raw/` zusammen, fragt nach Schwerpunkten, baut Wiki-Seiten | „ich habe etwas in raw/ abgelegt" |
-| 💬 `second-brain-query` | Antwortet aus dem Wiki, jede Aussage per `[[Wikilink]]` belegt | „was weiß ich über X?" |
-| 🩺 `second-brain-lint` | Findet kaputte Links, Waisen, Widersprüche, Lücken | „health check" |
+<p align="center"><img src="assets/skills.svg" alt="Vier Skills: second-brain richtet den Vault ein, second-brain-ingest verdichtet Quellen, second-brain-query beantwortet Fragen mit Belegen, second-brain-lint prüft das Wiki" width="900"></p>
 
 ## Warum nicht einfach …?
 
-| | Lose Notizen | Chat mit Dokumenten (RAG) | Dieses System |
-|---|---|---|---|
-| Wissen wird verdichtet | nein | nein, jede Frage startet bei null | ja, einmal pro Quelle |
-| Aussagen mit Beleg | nur manuell | Textstellen, ohne Struktur | `[[Wikilinks]]` |
-| Widersprüche erkennen | nein | nein | Lint meldet sie |
-| Lesbar ohne KI | ja | nein | ja, reines Markdown |
+<p align="center"><img src="assets/compare.svg" alt="Vergleich mit losen Notizen und Chat mit Dokumenten: Second Brain Skills verdichtet Wissen, belegt Aussagen per Wikilink, erkennt Widersprüche per Lint, bleibt als Markdown lesbar und speichert gute Antworten" width="900"></p>
 
 ## Unter der Haube
 
@@ -199,6 +130,6 @@ Lint nach etwa zehn Ingests. `qmd` (`npm i -g @tobilu/qmd`) ab etwa 100 Seiten. 
 
 </details>
 
-Gefällt dir das Setup? Ein ⭐ auf GitHub hilft anderen, es zu finden.
+<p align="center"><img src="assets/cta.svg" alt="Dein erstes Brain in drei Schritten: Einrichten, Befüllen, Fragen. Gefällt dir das Projekt, hilft ein Stern auf GitHub." width="900"></p>
 
 *Antworten sind nur so gut wie deine Quellen. Prüfe bei wichtigen Entscheidungen die Originale.*

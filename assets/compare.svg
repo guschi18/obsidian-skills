@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 310" width="900" height="310" role="img" aria-label="Vergleich: Lose Notizen und Chat mit Dokumenten verdichten kein Wissen und erkennen keine Widersprüche. Second Brain Skills verdichtet Wissen, belegt Aussagen per Wikilink, erkennt Widersprüche per Lint, bleibt als Markdown lesbar und speichert gute Antworten als Synthese.">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0f0a24"/><stop offset="1" stop-color="#1e1b4b"/></linearGradient>
+<linearGradient id="hl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7c3aed" stop-opacity="0.55"/><stop offset="1" stop-color="#2563eb" stop-opacity="0.25"/></linearGradient></defs>
+<rect width="900" height="310" rx="24" fill="url(#bg)"/><rect x="0.5" y="0.5" width="899" height="309" rx="23.5" fill="none" stroke="#3b3470"/>
+<rect x="692" y="18" width="192" height="274" rx="18" fill="url(#hl)" stroke="#a78bfa" stroke-width="1.5"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite"/></rect>
+<text x="388.0" y="62" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#a5a0d6">Lose Notizen</text>
+<text x="588.0" y="62" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#a5a0d6">Chat mit Dokumenten</text>
+<text x="788.0" y="62" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#fff">Second Brain Skills</text>
+<text x="40" y="121" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#e9e5ff">Wissen wird verdichtet</text>
+<path d="M317 111 l10 10 M327 111 l-10 10" stroke="#6d68a5" stroke-width="2.4" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.1111;0.1667;0.9333;0.9778;1.0000" dur="9.0s" repeatCount="indefinite"/></path>
+<text x="344" y="120.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#7e79b0">nur gesammelt</text>
+<path d="M517 111 l10 10 M527 111 l-10 10" stroke="#6d68a5" stroke-width="2.4" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.1311;0.1867;0.9333;0.9778;1.0000" dur="9.0s" repeatCount="indefinite"/></path>
+<text x="544" y="120.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#7e79b0">jede Frage bei null</text>
+<path d="M715 116 l5 5 l10 -11" fill="none" stroke="#4ade80" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="26" stroke-dashoffset="26"><animate attributeName="stroke-dashoffset" values="26;26;0;0;26;26" keyTimes="0.0000;0.1511;0.2067;0.9333;0.9778;1.0000" dur="9.0s" repeatCount="indefinite"/></path>
+<text x="744" y="120.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#ddd6fe">einmal pro Quelle</text>
+<text x="40" y="155" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#e9e5ff">Aussagen mit Beleg</text>
+<line x1="40" y1="133" x2="860" y2="133" stroke="#2a2457"/>
+<path d="M317 145 l10 10 M327 145 l-10 10" stroke="#6d68a5" stroke-width="2.4" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.1611;0.2167;0.9333;0.9778;1.0000" dur="9.0s" repeatCount="indefinite"/></path>
+<text x="344" y="154.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#7e79b0">manuell</text>
+<path d="M515 150 h14" stroke="#fbbf24" stroke-width="3" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.1811;0.2367;0.9333;0.9778;1.0000" dur="9.0s" repeatCount="indefinite"/></path>
+<text x="544" y="154.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#7e79b0">Textstellen</text>
+<path d="M715 150 l5 5 l10 -11" fill="none" stroke="#4ade80" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="26" stroke-dashoffset="26"><animate attributeName="stroke-dashoffset" values="26;26;0;0;26;26" keyTimes="0.0000;0.2011;0.2567;0.9333;0.9778;1.0000" dur="9.0s" repeatCount="indefinite"/></path>
+<text x="744" y="154.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#ddd6fe">[[Wikilinks]]</text>
+<text x="40" y="189" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#e9e5ff">Widersprüche erkennen</text>
+<line x1="40" y1="167" x2="860" y2="167" stroke="#2a2457"/>
+<path d="M317 179 l10 10 M327 179 l-10 10" stroke="#6d68a5" stroke-width="2.4" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.2111;0.2667;0.9333;0.9778;1.0000" dur="9.0s" repeatCount="indefinite"/></path>
+<text x="344" y="188.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#7e79b0">fällt nicht auf</text>
+<path d="M517 179 l10 10 M527 179 l-10 10" stroke="#6d68a5" stroke-width="2.4" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.2311;0.2867;0.9333;0.9778;1.0000" dur="9.0s" repeatCount="indefinite"/></path>
+<text x="544" y="188.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#7e79b0">fällt nicht auf</text>
+<path d="M715 184 l5 5 l10 -11" fill="none" stroke="#4ade80" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="26" stroke-dashoffset="26"><animate attributeName="stroke-dashoffset" values="26;26;0;0;26;26" keyTimes="0.0000;0.2511;0.3067;0.9333;0.9778;1.0000" dur="9.0s" repeatCount="indefinite"/></path>
+<text x="744" y="188.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#ddd6fe">Lint meldet sie</text>
+<text x="40" y="223" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#e9e5ff">Lesbar ohne KI</text>
+<line x1="40" y1="201" x2="860" y2="201" stroke="#2a2457"/>
+<path d="M315 218 l5 5 l10 -11" fill="none" stroke="#4ade80" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="26" stroke-dashoffset="26"><animate attributeName="stroke-dashoffset" values="26;26;0;0;26;26" keyTimes="0.0000;0.2611;0.3167;0.9333;0.9778;1.0000" dur="9.0s" repeatCount="indefinite"/></path>
+<text x="344" y="222.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#7e79b0">Markdown</text>
+<path d="M517 213 l10 10 M527 213 l-10 10" stroke="#6d68a5" stroke-width="2.4" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.2811;0.3367;0.9333;0.9778;1.0000" dur="9.0s" repeatCount="indefinite"/></path>
+<text x="544" y="222.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#7e79b0">nur im Tool</text>
+<path d="M715 218 l5 5 l10 -11" fill="none" stroke="#4ade80" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="26" stroke-dashoffset="26"><animate attributeName="stroke-dashoffset" values="26;26;0;0;26;26" keyTimes="0.0000;0.3011;0.3567;0.9333;0.9778;1.0000" dur="9.0s" repeatCount="indefinite"/></path>
+<text x="744" y="222.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#ddd6fe">reines Markdown</text>
+<text x="40" y="257" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#e9e5ff">Gute Antworten bleiben</text>
+<line x1="40" y1="235" x2="860" y2="235" stroke="#2a2457"/>
+<path d="M317 247 l10 10 M327 247 l-10 10" stroke="#6d68a5" stroke-width="2.4" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.3111;0.3667;0.9333;0.9778;1.0000" dur="9.0s" repeatCount="indefinite"/></path>
+<text x="344" y="256.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#7e79b0">gehen verloren</text>
+<path d="M517 247 l10 10 M527 247 l-10 10" stroke="#6d68a5" stroke-width="2.4" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.3311;0.3867;0.9333;0.9778;1.0000" dur="9.0s" repeatCount="indefinite"/></path>
+<text x="544" y="256.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#7e79b0">verfliegen im Chat</text>
+<path d="M715 252 l5 5 l10 -11" fill="none" stroke="#4ade80" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="26" stroke-dashoffset="26"><animate attributeName="stroke-dashoffset" values="26;26;0;0;26;26" keyTimes="0.0000;0.3511;0.4067;0.9333;0.9778;1.0000" dur="9.0s" repeatCount="indefinite"/></path>
+<text x="744" y="256.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#ddd6fe">als Synthese-Seite</text>
+<text x="40" y="288" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#8b86c0">Grenze: ab etwa 100 Seiten lohnt sich qmd für die Suche.</text>
+</svg>
