@@ -24,11 +24,6 @@
 git clone https://github.com/guschi18/obsidian-skills.git && cp -r obsidian-skills/second-brain* ~/.claude/skills/
 ```
 
-| 🪄 **Einrichten** | 📥 **Befüllen** | 💬 **Abfragen** | 🩺 **Verbessern** |
-|:---:|:---:|:---:|:---:|
-| `second-brain` | `second-brain-ingest` | `second-brain-query` | `second-brain-lint` |
-| Vault anlegen | `raw/` → `wiki/` | Antwort mit Belegen | Fehler und Lücken finden |
-
 <p align="center"><img src="assets/demo.svg" alt="Animation: Eine Quelle landet in raw/, ingest baut verlinkte Wiki-Seiten, eine Frage wird mit Quellenbelegen beantwortet" width="900"></p>
 
 ## ⚡ In 60 Sekunden starten
@@ -135,6 +130,6 @@ Lint nach etwa zehn Ingests. `qmd` (`npm i -g @tobilu/qmd`) ab etwa 100 Seiten. 
 
 </details>
 
-Gefällt dir das Setup? Ein ⭐ auf GitHub hilft anderen, es zu finden.
+<p align="center"><img src="assets/cta.svg" alt="Dein erstes Brain in drei Schritten: Einrichten, Befüllen, Fragen. Gefällt dir das Projekt, hilft ein Stern auf GitHub." width="900"></p>
 
 *Antworten sind nur so gut wie deine Quellen. Prüfe bei wichtigen Entscheidungen die Originale.*
