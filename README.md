@@ -20,17 +20,10 @@ git clone https://github.com/guschi18/obsidian-skills.git && cp -r obsidian-skil
 ![Skills](https://img.shields.io/badge/skills-4-2563EB)
 ![Language](https://img.shields.io/badge/language-DE%20%7C%20EN-111827)
 
-```mermaid
-flowchart LR
-    A["📥 raw/<br/>Artikel, PDFs, Transkripte"] -->|second-brain-ingest| B["🕸️ wiki/<br/>verlinkte Seiten"]
-    B -->|second-brain-query| C["💬 Antworten<br/>mit Quellenbelegen"]
-    C -.->|"wertvolle Antworten speichern"| B
-    B -->|second-brain-lint| D["🩺 Gesundheitsbericht"]
-    D -.->|Fixes| B
-    S["🪄 second-brain<br/>einmalig: Vault anlegen"] --> A
-```
-
-**Einrichten → befüllen → abfragen → verbessern.** Rohe Quellen bleiben unverändert. Das Wissen wächst in `wiki/`.
+| 🪄 **Einrichten** | 📥 **Befüllen** | 💬 **Abfragen** | 🩺 **Verbessern** |
+|:---:|:---:|:---:|:---:|
+| `second-brain` | `second-brain-ingest` | `second-brain-query` | `second-brain-lint` |
+| Vault anlegen | `raw/` → `wiki/` | Antwort mit Belegen | Fehler und Lücken finden |
 
 ## ⚡ In 60 Sekunden starten
 
