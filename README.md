@@ -147,7 +147,7 @@ Agent:  Laut [[karpathy-llm-wiki]] wird Wissen einmal verdichtet und nur noch
 | `wiki/` | Wissensgraph, den der Agent pflegt |
 | `output/` | Reports, Query-Ergebnisse, generierte Artefakte |
 
-Unterordner von `wiki/`: `sources/` (eine Seite pro Quelle), `entities/` (Personen, Organisationen, Produkte, Tools), `concepts/` (Ideen, Frameworks, Muster), `synthesis/` (Analysen und Vergleiche). Dazu `index.md` als Master-Katalog und `log.md` als chronologisches Protokoll.
+Unterordner von `wiki/`: `sources/`, `entities/`, `concepts/`, `synthesis/`, dazu `index.md` und `log.md`.
 
 Jede Seite beginnt mit YAML-Frontmatter:
 
@@ -163,56 +163,16 @@ updated: YYYY-MM-DD
 </details>
 
 <details>
-<summary><b>Repository-Struktur</b></summary>
+<summary><b>Agenten und Tools</b></summary>
 
-```text
-.
-├── second-brain/
-│   ├── SKILL.md                  # Onboarding Wizard
-│   ├── scripts/onboarding.sh     # Erstellt raw/, wiki/, output/ und Basisdateien
-│   └── references/
-│       ├── wiki-schema.md        # Kanonisches Schema für alle Vaults
-│       ├── tooling.md            # Empfohlene CLI-Tools
-│       └── agent-configs/        # claude-code.md, codex.md, cursor.md, gemini.md
-├── second-brain-ingest/SKILL.md  # Quellen → Wiki-Seiten
-├── second-brain-query/SKILL.md   # Fragen aus dem Wiki beantworten
-└── second-brain-lint/SKILL.md    # Wiki-Gesundheit prüfen
-```
-
-</details>
-
-<details>
-<summary><b>Agenten-Unterstützung</b></summary>
-
-| Agent | Datei im Ziel-Vault |
+| Agent | Datei im Vault |
 |---|---|
 | Claude Code | `CLAUDE.md` |
 | Codex | `AGENTS.md` |
 | Cursor | `.cursor/rules/second-brain.mdc` |
 | Gemini CLI | `GEMINI.md` |
 
-Alle Templates nutzen dasselbe `wiki-schema.md`. Verschiedene Agenten erzeugen dadurch kompatible Seiten.
-
-</details>
-
-<details>
-<summary><b>Empfohlene Tools</b></summary>
-
-| Tool | Zweck |
-|---|---|
-| Obsidian Web Clipper | Speichert Webartikel als Markdown in `raw/` |
-| `summarize` | Fasst Links, Dateien und Medien per CLI zusammen |
-| `qmd` | Lokale Suche für größere Wikis (ab etwa 100 Seiten) |
-| `agent-browser` | Browser-Automation, wenn Standardtools bei der Recherche nicht reichen |
-
-Alle optional außer dem Web Clipper als Hauptweg für neue Quellen. Der Skill läuft ohne Datenbank oder Server.
-
-</details>
-
-<details>
-<summary><b>CLAUDE.md in diesem Repo</b></summary>
-
-Die `CLAUDE.md` weist Claude Code an, bei Wissensfragen zuerst die Brains unter `D:\Brains\` zu prüfen, die `wiki\index.md` zu lesen und dem Query-Skill des passenden Brains zu folgen. Antworten bleiben so an eigene Quellen gebunden. Passe den Pfad an deine Ablage an.
+Optionale Tools: Obsidian Web Clipper (Quellen nach `raw/`), `summarize`, `qmd` (Suche ab ca. 100 Seiten), `agent-browser`.
 
 </details>
 
