@@ -117,12 +117,7 @@ Agent:  Laut [[karpathy-llm-wiki]] wird Wissen einmal verdichtet und nur noch
 
 ## Enthaltene Skills
 
-| Skill | Macht | Auslöser |
-|---|---|---|
-| 🪄 `second-brain` | Legt den Vault an: Ordner, Index, Log, Agent-Config | „Second Brain einrichten" |
-| 📥 `second-brain-ingest` | Fasst `raw/` zusammen, fragt nach Schwerpunkten, baut Wiki-Seiten | „ich habe etwas in raw/ abgelegt" |
-| 💬 `second-brain-query` | Antwortet aus dem Wiki, jede Aussage per `[[Wikilink]]` belegt | „was weiß ich über X?" |
-| 🩺 `second-brain-lint` | Findet kaputte Links, Waisen, Widersprüche, Lücken | „health check" |
+<p align="center"><img src="assets/skills.svg" alt="Vier Skills: second-brain richtet den Vault ein, second-brain-ingest verdichtet Quellen, second-brain-query beantwortet Fragen mit Belegen, second-brain-lint prüft das Wiki" width="900"></p>
 
 ## Warum nicht einfach …?
 
