@@ -120,48 +120,12 @@ Agent:  Laut [[karpathy-llm-wiki]] wird Wissen einmal verdichtet und nur noch
 
 ## Enthaltene Skills
 
-<table>
-<tr>
-<td width="50%" valign="top">
-
-### 🪄 `second-brain`
-**Einmal einrichten.**
-Wizard fragt Name, Ort, Thema, Agenten und Tools. Erzeugt `raw/`, `wiki/`, `output/`, Index, Log und die Agent-Konfiguration.
-
-*Auslöser:* „onboard", „Second Brain einrichten", „Vault anlegen"
-
-</td>
-<td width="50%" valign="top">
-
-### 📥 `second-brain-ingest`
-**Quellen verdichten.**
-Liest `raw/`, bespricht die Kernaussagen mit dir und baut Quellen-, Entitäts- und Konzeptseiten. Erkennt neue Dateien über `wiki/log.md`.
-
-*Auslöser:* „ingest", „ich habe etwas in raw/ abgelegt"
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-### 💬 `second-brain-query`
-**Fragen beantworten.**
-Startet beim Index, folgt Wikilinks, zitiert Wiki-Seiten. Bei großen Wikis mit `qmd`. Speichert gute Antworten als Synthese.
-
-*Auslöser:* „was weiß ich über X?"
-
-</td>
-<td width="50%" valign="top">
-
-### 🩺 `second-brain-lint`
-**Wiki prüfen.**
-Acht Checks: kaputte Links, Waisenseiten, Widersprüche, veraltete Aussagen, fehlende Seiten, Querverweise, Index, Lücken. Bericht nach Schwere.
-
-*Auslöser:* „health check", „lint", „audit"
-
-</td>
-</tr>
-</table>
+| Skill | Macht | Auslöser |
+|---|---|---|
+| 🪄 `second-brain` | Legt den Vault an: Ordner, Index, Log, Agent-Config | „Second Brain einrichten" |
+| 📥 `second-brain-ingest` | Fasst `raw/` zusammen, fragt nach Schwerpunkten, baut Wiki-Seiten | „ich habe etwas in raw/ abgelegt" |
+| 💬 `second-brain-query` | Antwortet aus dem Wiki, jede Aussage per `[[Wikilink]]` belegt | „was weiß ich über X?" |
+| 🩺 `second-brain-lint` | Findet kaputte Links, Waisen, Widersprüche, Lücken | „health check" |
 
 ## Warum nicht einfach …?
 
@@ -175,20 +139,6 @@ Acht Checks: kaputte Links, Waisenseiten, Widersprüche, veraltete Aussagen, feh
 | Aufwand | hoch (du pflegst alles) | niedrig | mittel (du bestätigst, der Agent schreibt) |
 
 **Grenze:** Ohne `qmd` wird die Suche ab etwa 100 Seiten langsamer, weil der Agent den Index sonst komplett scannt.
-
-## Worum es geht
-
-Das Repository ist ein Werkzeugkasten, kein fertiger Notizbestand. Es folgt dem **LLM Wiki Pattern**: Ein KI-Agent arbeitet als Bibliothekar. Rohe Quellen bleiben unverändert in `raw/`. Das Wissen entsteht als verlinkte Markdown-Seiten in `wiki/`.
-
-Daraus lassen sich Fragen beantworten wie:
-
-- Welche Quellen stützen diese Aussage?
-- Welche Konzepte tauchen in mehreren Quellen auf?
-- Welche Personen, Organisationen und Tools hängen zusammen?
-- Wo widersprechen sich zwei Quellen?
-- Wo fehlen Seiten, Querverweise oder aktuelle Quellen?
-
-Gedacht für persönliche Obsidian-Wissensdatenbanken, Recherche-Brains zu Themen oder Märkten und Teams, die Agenten (Claude Code, Codex, Cursor, Gemini CLI) nach klaren Wiki-Regeln arbeiten lassen wollen.
 
 ## Unter der Haube
 
