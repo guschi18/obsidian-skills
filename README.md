@@ -32,7 +32,7 @@ cp -r obsidian-skills/second-brain* ~/.claude/skills/
 
 ```powershell
 git clone https://github.com/guschi18/obsidian-skills.git
-Copy-Item -Recurse obsidian-skills\second-brain* $HOME\.claude\skills```
+Copy-Item -Recurse obsidian-skills\second-brain* $HOME\.claude\skills\n```
 
 </details>
 
