@@ -1,24 +1,31 @@
-<p align="center">
+<h1 align="center">
   <picture>
     <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.svg">
     <img src="assets/banner.svg" alt="Second Brain Skills: Quellen rein, verlinktes Wiki raus" width="100%">
   </picture>
+</h1>
+
+<p align="center">
+  <b>Wirf Quellen rein. Bekomm ein Wiki raus, das sich selbst pflegt.</b><br>
+  Vier Agent-Skills machen aus PDFs, Artikeln und Transkripten einen verlinkten Obsidian-Wissensgraphen.<br>
+  Du befragst ihn, er meldet Widersprüche.
 </p>
-
-# 🧠 Second Brain Skills
-
-> **Wirf Quellen rein. Bekomm ein Wiki raus, das sich selbst pflegt.**
-> Vier Agent-Skills machen aus PDFs, Artikeln und Transkripten einen verlinkten Obsidian-Wissensgraphen. Du befragst ihn, er meldet Widersprüche.
 
 ```bash
 git clone https://github.com/guschi18/obsidian-skills.git && cp -r obsidian-skills/second-brain* ~/.claude/skills/
 ```
 
+<p align="center">
+
 [**⚡ Starten**](#-in-60-sekunden-starten) · [🔍 Ergebnis](#-was-dabei-herauskommt) · [💬 Session](#-so-fühlt-sich-das-an) · [🧩 Skills](#enthaltene-skills) · [❓ FAQ](#-faq)
 
-![Obsidian](https://img.shields.io/badge/obsidian-vault-7C3AED)
-![Skills](https://img.shields.io/badge/skills-4-2563EB)
-![Language](https://img.shields.io/badge/language-DE%20%7C%20EN-111827)
+</p>
+
+<p align="center">
+  <img alt="Obsidian" src="https://img.shields.io/badge/obsidian-vault-7C3AED">
+  <img alt="Skills" src="https://img.shields.io/badge/skills-4-2563EB">
+  <img alt="Sprache" src="https://img.shields.io/badge/language-DE%20%7C%20EN-111827">
+</p>
 
 | 🪄 **Einrichten** | 📥 **Befüllen** | 💬 **Abfragen** | 🩺 **Verbessern** |
 |:---:|:---:|:---:|:---:|
