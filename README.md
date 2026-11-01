@@ -199,12 +199,6 @@ Lint nach etwa zehn Ingests. `qmd` (`npm i -g @tobilu/qmd`) ab etwa 100 Seiten. 
 
 </details>
 
-## 🚀 Dein erstes Brain in drei Sätzen
-
-1. **„Richte ein Second Brain ein."** Der Wizard legt den Vault an.
-2. **Leg einen Artikel in `raw/`** (am schnellsten mit dem Obsidian Web Clipper) und sag: **„Ingest."**
-3. **Frag: „Was weiß ich über …?"** Du bekommst eine Antwort mit Quellenbelegen.
-
 Gefällt dir das Setup? Ein ⭐ auf GitHub hilft anderen, es zu finden.
 
 *Antworten sind nur so gut wie deine Quellen. Prüfe bei wichtigen Entscheidungen die Originale.*
