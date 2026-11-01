@@ -105,36 +105,17 @@ Jede weitere Quelle ergänzt diese Seiten. Widersprüche werden mit beiden Quell
 
 ## 💬 So fühlt sich das an
 
-**Ingest:** Der Agent schreibt nichts, bevor du die Schwerpunkte bestätigt hast.
-
 ```text
 Du:     Ich habe karpathy-llm-wiki.md in raw/ gelegt.
-Agent:  Kernaussagen, die ich sehe:
-        1. Wissen wird einmal verdichtet, nicht bei jeder Frage neu gesucht.
-        2. Ein Agent pflegt Index, Log und Querverweise.
-        3. Rohquellen bleiben unverändert.
-        Soll ich etwas betonen oder weglassen?
+Agent:  Kernaussagen: 1. Wissen wird einmal verdichtet. 2. Ein Agent pflegt Index
+        und Querverweise. Soll ich etwas betonen?
 Du:     Betone Punkt 2.
-Agent:  Fertig. 1 Quellenseite, 1 Entität, 1 Konzept angelegt,
-        index.md und log.md aktualisiert.
-```
+Agent:  Fertig: 1 Quellenseite, 1 Entität, 1 Konzept, Index und Log aktualisiert.
 
-**Query:** Jede Aussage zeigt auf die Seite, aus der sie stammt.
-
-```text
 Du:     Was weiß ich über das LLM Wiki Pattern?
-Agent:  Laut [[karpathy-llm-wiki]] wird Wissen einmal verdichtet und danach
-        nur erweitert. Das Konzept [[LLM Wiki Pattern]] verbindet sich mit
-        [[Andrej Karpathy]].
-        Diese Antwort könnte als Synthese-Seite bleiben. Speichern?
-```
-
-**Lint:** Du bekommst einen Bericht nach Schwere, nicht eine Wand aus Warnungen.
-
-```text
-Agent:  Gefunden: 1 Fehler, 2 Warnungen, 3 Hinweise. Soll ich etwas fixen?
-        Fehler    kaputter Link [[Karpathy]] in concepts/LLM Wiki Pattern.md
-        Warnung   Waisenseite entities/Tobi Lütke.md (keine eingehenden Links)
+Agent:  Laut [[karpathy-llm-wiki]] wird Wissen einmal verdichtet und nur noch
+        erweitert, siehe [[LLM Wiki Pattern]] und [[Andrej Karpathy]].
+        Als Synthese-Seite speichern?
 ```
 
 ## Enthaltene Skills
