@@ -8,6 +8,8 @@
 ![Skills](https://img.shields.io/badge/skills-4-2563EB)
 ![Language](https://img.shields.io/badge/language-DE%20%7C%20EN-111827)
 
+[Starten](#-in-60-sekunden-starten) · [Ergebnis](#-was-dabei-herauskommt) · [Beispiel-Session](#-so-fühlt-sich-das-an) · [Skills](#enthaltene-skills) · [Unter der Haube](#unter-der-haube)
+
 ```mermaid
 flowchart LR
     A["📥 raw/<br/>Artikel, PDFs, Transkripte"] -->|second-brain-ingest| B["🕸️ wiki/<br/>verlinkte Seiten"]
@@ -125,20 +127,6 @@ Agent:  Gefunden: 1 Fehler, 2 Warnungen, 3 Hinweise. Soll ich etwas fixen?
         Warnung   Waisenseite entities/Tobi Lütke.md (keine eingehenden Links)
 ```
 
-## Worum es geht
-
-Dieses Repository enthält lokale Skills für den Aufbau und die Pflege eines Obsidian-basierten Second Brains. Es ist kein fertiger Notizbestand, sondern ein Werkzeugkasten: Die Skills helfen dabei, einen neuen Vault zu initialisieren, Quellen zu verarbeiten, Fragen gegen das Wiki zu beantworten und die Qualität des Wissensgraphen regelmäßig zu prüfen.
-
-Das System folgt dem **LLM Wiki Pattern**: Ein KI-Agent arbeitet als Bibliothekar. Rohe Quellen bleiben unverändert in `raw/`, während das eigentliche Wissen als strukturierte, verlinkte Markdown-Seiten in `wiki/` entsteht.
-
-Dadurch wird aus einzelnen Artikeln, Transkripten, PDFs oder Notizen ein navigierbarer Wissensgraph:
-
-- Welche Quellen stützen eine bestimmte Aussage?
-- Welche Konzepte tauchen in mehreren Quellen wieder auf?
-- Welche Personen, Organisationen, Produkte oder Tools sind miteinander verbunden?
-- Welche Synthesen, Vergleiche und Analysen sind bereits entstanden?
-- Wo fehlen Querverweise, Seiten oder aktuelle Quellen?
-
 ## Enthaltene Skills
 
 <table>
@@ -197,65 +185,34 @@ Acht Checks: kaputte Links, Waisenseiten, Widersprüche, veraltete Aussagen, feh
 
 **Grenze:** Ohne `qmd` wird die Suche ab etwa 100 Seiten langsamer, weil der Agent den Index sonst komplett scannt.
 
-## Perfekt für
+## Worum es geht
 
-Diese Skills sind besonders nützlich für:
+Das Repository ist ein Werkzeugkasten, kein fertiger Notizbestand. Es folgt dem **LLM Wiki Pattern**: Ein KI-Agent arbeitet als Bibliothekar. Rohe Quellen bleiben unverändert in `raw/`. Das Wissen entsteht als verlinkte Markdown-Seiten in `wiki/`.
 
-- persönliche Obsidian-Wissensdatenbanken
-- Recherche-Brains zu Fachthemen, Projekten oder Märkten
-- LLM-gestützte Arbeit mit kontrollierten lokalen Quellen
-- Aufbau eines versionierten Knowledge Graphs aus Webartikeln, PDFs, Transkripten und Notizen
-- Teams oder Einzelpersonen, die Agenten mit klaren Wiki-Regeln arbeiten lassen wollen
-- wiederholbare Workflows für Claude Code, Codex, Cursor oder Gemini CLI
+Daraus lassen sich Fragen beantworten wie:
 
-## Obsidian als lokaler Wissensgraph
+- Welche Quellen stützen diese Aussage?
+- Welche Konzepte tauchen in mehreren Quellen auf?
+- Welche Personen, Organisationen und Tools hängen zusammen?
+- Wo widersprechen sich zwei Quellen?
+- Wo fehlen Seiten, Querverweise oder aktuelle Quellen?
 
-Der Ziel-Vault ist für Obsidian gebaut. Die Skills erzeugen und pflegen eine klare Wiki-Struktur:
+Gedacht für persönliche Obsidian-Wissensdatenbanken, Recherche-Brains zu Themen oder Märkten und Teams, die Agenten (Claude Code, Codex, Cursor, Gemini CLI) nach klaren Wiki-Regeln arbeiten lassen wollen.
 
-- Quellen werden als eigene Summary-Seiten dokumentiert.
-- Entitäten und Konzepte erhalten eigene Seiten.
-- Alle internen Beziehungen laufen über `[[wikilinks]]`.
-- `wiki/index.md` bleibt der Master-Katalog aller Seiten.
-- `wiki/log.md` protokolliert jede Operation chronologisch.
-- `wiki/synthesis/` sammelt wertvolle Vergleiche, Analysen und Querverbindungen.
+## Unter der Haube
 
-Statt Informationen nur als lose Notizen abzulegen, entsteht ein lokales Wissenssystem, das von LLMs gezielt gelesen, erweitert und zitiert werden kann.
-
-## Projektstruktur
-
-```text
-.
-+-- second-brain/
-|   +-- SKILL.md                      # Onboarding Wizard für neue Vaults
-|   +-- scripts/
-|   |   +-- onboarding.sh             # Erstellt raw/, wiki/, output/ und Basisdateien
-|   +-- references/
-|       +-- wiki-schema.md            # Kanonisches Schema für alle Ziel-Vaults
-|       +-- tooling.md                # Empfohlene CLI-Tools
-|       +-- agent-configs/
-|           +-- claude-code.md        # Vorlage für CLAUDE.md
-|           +-- codex.md              # Vorlage für AGENTS.md
-|           +-- cursor.md             # Vorlage für .cursor/rules/second-brain.mdc
-|           +-- gemini.md             # Vorlage für GEMINI.md
-+-- second-brain-ingest/
-|   +-- SKILL.md                      # Verarbeitet neue Quellen in Wiki-Seiten
-+-- second-brain-query/
-|   +-- SKILL.md                      # Beantwortet Fragen aus dem lokalen Wiki
-+-- second-brain-lint/
-    +-- SKILL.md                      # Prueft Wiki-Gesundheit und Konsistenz
-```
-
-## Wie das Wissen modelliert wird
-
-Ein mit diesen Skills erzeugter Vault besteht aus drei Hauptbereichen:
+<details>
+<summary><b>Vault-Aufbau und Seitenformat</b></summary>
 
 | Ordner | Bedeutung |
 |---|---|
-| `raw/` | Unveränderte Originalquellen, z. B. Web-Clips, PDFs, Transkripte oder Notizen |
-| `wiki/` | Strukturierter Wissensgraph, den der LLM-Agent pflegt |
-| `output/` | Reports, Query-Ergebnisse und generierte Artefakte |
+| `raw/` | Unveränderte Originalquellen (Web-Clips, PDFs, Transkripte, Notizen) |
+| `wiki/` | Wissensgraph, den der Agent pflegt |
+| `output/` | Reports, Query-Ergebnisse, generierte Artefakte |
 
-Jede Wiki-Seite besitzt YAML-Frontmatter:
+Unterordner von `wiki/`: `sources/` (eine Seite pro Quelle), `entities/` (Personen, Organisationen, Produkte, Tools), `concepts/` (Ideen, Frameworks, Muster), `synthesis/` (Analysen und Vergleiche). Dazu `index.md` als Master-Katalog und `log.md` als chronologisches Protokoll.
+
+Jede Seite beginnt mit YAML-Frontmatter:
 
 ```yaml
 ---
@@ -266,28 +223,29 @@ updated: YYYY-MM-DD
 ---
 ```
 
-Die Wiki-Unterstruktur trennt die Rollen klar:
+</details>
 
-- `wiki/sources/` - eine Zusammenfassungsseite pro Quelle
-- `wiki/entities/` - Personen, Organisationen, Produkte und Tools
-- `wiki/concepts/` - Ideen, Frameworks, Muster und Theorien
-- `wiki/synthesis/` - Analysen, Vergleiche und übergreifende Zusammenhänge
+<details>
+<summary><b>Repository-Struktur</b></summary>
 
-## Workflow
+```text
+.
+├── second-brain/
+│   ├── SKILL.md                  # Onboarding Wizard
+│   ├── scripts/onboarding.sh     # Erstellt raw/, wiki/, output/ und Basisdateien
+│   └── references/
+│       ├── wiki-schema.md        # Kanonisches Schema für alle Vaults
+│       ├── tooling.md            # Empfohlene CLI-Tools
+│       └── agent-configs/        # claude-code.md, codex.md, cursor.md, gemini.md
+├── second-brain-ingest/SKILL.md  # Quellen → Wiki-Seiten
+├── second-brain-query/SKILL.md   # Fragen aus dem Wiki beantworten
+└── second-brain-lint/SKILL.md    # Wiki-Gesundheit prüfen
+```
 
-Der typische Ablauf ist bewusst einfach:
+</details>
 
-1. **Vault anlegen** mit `second-brain`
-2. **Quellen sammeln** in `raw/`, idealerweise mit dem Obsidian Web Clipper
-3. **Quellen ingestieren** mit `second-brain-ingest`
-4. **Fragen stellen** mit `second-brain-query`
-5. **Wiki prüfen** mit `second-brain-lint`
-
-Der wichtigste Designpunkt: Quellen bleiben stabil, das Wiki wird kontinuierlich verdichtet.
-
-## Agenten-Unterstützung
-
-Der Onboarding-Skill kann Konfigurationsdateien für mehrere Agenten erzeugen:
+<details>
+<summary><b>Agenten-Unterstützung</b></summary>
 
 | Agent | Datei im Ziel-Vault |
 |---|---|
@@ -296,87 +254,35 @@ Der Onboarding-Skill kann Konfigurationsdateien für mehrere Agenten erzeugen:
 | Cursor | `.cursor/rules/second-brain.mdc` |
 | Gemini CLI | `GEMINI.md` |
 
-Alle Templates verwenden dasselbe `wiki-schema.md`. Dadurch arbeiten verschiedene Agenten nach denselben Regeln und erzeugen kompatible Wiki-Seiten.
+Alle Templates nutzen dasselbe `wiki-schema.md`. Verschiedene Agenten erzeugen dadurch kompatible Seiten.
 
-## Beispiel-Fragen an ein erzeugtes Brain
+</details>
 
-- Was weiß mein Wiki bereits über ein bestimmtes Unternehmen?
-- Welche Quellen erwähnen ein bestimmtes Konzept?
-- Welche Tools werden in mehreren Artikeln verglichen?
-- Welche Aussagen widersprechen sich zwischen zwei Quellen?
-- Welche Themen sind häufig erwähnt, aber noch nicht gut ausgearbeitet?
-- Welche Synthese sollte aus den vorhandenen Notizen gespeichert werden?
-
-## Quickstart im Detail
-
-### Schritt 1 - Neuen Vault initialisieren
-
-Starte den Skill `second-brain`. Der Wizard fragt nacheinander:
-
-- Name des Vaults
-- Speicherort
-- Thema oder Domain
-- gewünschte Agent-Konfigurationen
-- optionale CLI-Tools
-
-Danach erzeugt das Onboarding die Grundstruktur:
-
-```text
-raw/
-raw/assets/
-wiki/
-wiki/sources/
-wiki/entities/
-wiki/concepts/
-wiki/synthesis/
-output/
-wiki/index.md
-wiki/log.md
-```
-
-### Schritt 2 - Quellen verarbeiten und abfragen
-
-Lege Quellen in `raw/` ab und führe danach `second-brain-ingest` aus. Sobald die ersten Wiki-Seiten entstanden sind, kann `second-brain-query` Fragen gegen den lokalen Wissensbestand beantworten.
-
-Nach größeren Änderungen oder etwa alle zehn Ingests sollte `second-brain-lint` laufen.
-
-## Empfohlene Tools
+<details>
+<summary><b>Empfohlene Tools</b></summary>
 
 | Tool | Zweck |
 |---|---|
-| Obsidian Web Clipper | Speichert Webartikel sauber als Markdown in `raw/` |
+| Obsidian Web Clipper | Speichert Webartikel als Markdown in `raw/` |
 | `summarize` | Fasst Links, Dateien und Medien per CLI zusammen |
-| `qmd` | Lokale Suche für größere Markdown-Wikis |
-| `agent-browser` | Browser-Automation für Recherchefälle, in denen Standardtools nicht reichen |
+| `qmd` | Lokale Suche für größere Wikis (ab etwa 100 Seiten) |
+| `agent-browser` | Browser-Automation, wenn Standardtools bei der Recherche nicht reichen |
 
-Die Tools sind optional, aber für wachsende Vaults sinnvoll. Der Skill funktioniert auch ohne Datenbank oder Server.
+Alle optional außer dem Web Clipper als Hauptweg für neue Quellen. Der Skill läuft ohne Datenbank oder Server.
 
-## GitHub-Ziel
+</details>
 
-Dieses Repository repräsentiert den wiederverwendbaren Skill-Kern:
+<details>
+<summary><b>CLAUDE.md in diesem Repo</b></summary>
 
-- Skill-Definitionen für Setup, Ingest, Query und Lint
-- das kanonische Wiki-Schema
-- Agent-Konfigurationsvorlagen für mehrere LLM-Umgebungen
-- ein Onboarding-Script für neue Obsidian-Vaults
-- Tooling-Hinweise für lokale Recherche- und Suchworkflows
+Die `CLAUDE.md` weist Claude Code an, bei Wissensfragen zuerst die Brains unter `D:\Brains\` zu prüfen, die `wiki\index.md` zu lesen und dem Query-Skill des passenden Brains zu folgen. Antworten bleiben so an eigene Quellen gebunden. Passe den Pfad an deine Ablage an.
 
-Nicht enthalten sind persönliche Vault-Inhalte, private Quellen, lokale Obsidian-Einstellungen oder projektspezifische Wissensdatenbanken.
+</details>
 
-## CLAUDE.md – Claude Code Integration
+## Nicht enthalten
 
-Dieses Repository enthält eine `CLAUDE.md` für Claude Code. Sie steuert, wie der Agent bei Wissensfragen vorgeht:
-
-```md
-# Claude Anweisungen
-
-Wenn der User eine Frage zu seinem Wissen stellt oder etwas sucht, schau zuerst welche Brains
-es unter `D:\Brains\` gibt, lies die `wiki\index.md` der passenden Brains und folge dem
-Query-Skill unter `{brain}\.claude\skills\second-brain-query\SKILL.md`.
-```
-
-**Was das bewirkt:** Statt allgemein zu antworten, navigiert Claude Code zuerst durch den lokalen Brain-Graphen und zieht seine Antworten aus dem konkreten Wissensbestand. So bleibt jede Antwort an echte, selbst gepflegte Quellen gebunden.
+Persönliche Vault-Inhalte, private Quellen, lokale Obsidian-Einstellungen und projektspezifische Wissensdatenbanken.
 
 ## Hinweis
 
-Diese Skills erzeugen und pflegen lokale Wissensgraphen. Die Qualität der Antworten hängt von den eingepflegten Quellen, der Konsistenz des Wikis und regelmäßigen Lint-Prüfungen ab. Für fachlich verbindliche Entscheidungen sollten relevante Originalquellen immer mitgeprüft werden.
+Die Qualität der Antworten hängt von den eingepflegten Quellen, der Konsistenz des Wikis und regelmäßigen Lint-Prüfungen ab. Für fachlich verbindliche Entscheidungen prüfe die Originalquellen mit.
