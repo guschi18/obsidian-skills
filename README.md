@@ -67,7 +67,7 @@ wiki/
 ├── concepts/
 │   └── LLM Wiki Pattern.md     ← Konzept, neu angelegt
 ├── index.md                    ← Master-Katalog, 3 neue Einträge
-└── log.md                      ← "## [2026-11-01] ingest | karpathy-llm-wiki.md"
+└── log.md                      ← "## [2026-11-01] ingest | Karpathy LLM Wiki"
 ```
 
 Und so sieht eine erzeugte Seite aus:
@@ -276,6 +276,50 @@ Alle optional außer dem Web Clipper als Hauptweg für neue Quellen. Der Skill l
 <summary><b>CLAUDE.md in diesem Repo</b></summary>
 
 Die `CLAUDE.md` weist Claude Code an, bei Wissensfragen zuerst die Brains unter `D:\Brains\` zu prüfen, die `wiki\index.md` zu lesen und dem Query-Skill des passenden Brains zu folgen. Antworten bleiben so an eigene Quellen gebunden. Passe den Pfad an deine Ablage an.
+
+</details>
+
+## ❓ FAQ
+
+<details>
+<summary><b>Braucht es Obsidian?</b></summary>
+
+Nein. Das Ergebnis ist reines Markdown mit `[[Wikilinks]]`. Obsidian zeigt den Graphen und die Rückverweise am besten an, der Agent arbeitet aber nur mit Dateien.
+
+</details>
+
+<details>
+<summary><b>Kann der Agent meine Originalquellen verändern?</b></summary>
+
+Nein. Das Schema verbietet jede Änderung in `raw/`. Das Log in `wiki/log.md` ist append-only, bestehende Einträge bleiben stehen.
+
+</details>
+
+<details>
+<summary><b>Woher weiß Ingest, was neu ist?</b></summary>
+
+Er vergleicht die Dateien in `raw/` (ohne `raw/assets/`) mit den `ingest`-Einträgen in `wiki/log.md`. Alles, was dort fehlt, gilt als unverarbeitet.
+
+</details>
+
+<details>
+<summary><b>Wann lohnt sich Lint?</b></summary>
+
+Nach etwa zehn Ingests, mindestens monatlich und vor größeren Analysen.
+
+</details>
+
+<details>
+<summary><b>Die Suche wird langsam. Was tun?</b></summary>
+
+Ab etwa 100 Seiten `qmd` installieren (`npm i -g @tobilu/qmd`). Query nutzt es automatisch, wenn es vorhanden ist.
+
+</details>
+
+<details>
+<summary><b>Läuft das auch mit Codex, Cursor oder Gemini CLI?</b></summary>
+
+Ja. Der Wizard erzeugt `AGENTS.md`, `.cursor/rules/second-brain.mdc` oder `GEMINI.md` aus demselben Schema. Die Skill-Ordner müssen im Skill-Pfad des jeweiligen Agenten liegen.
 
 </details>
 
