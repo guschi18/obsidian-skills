@@ -68,12 +68,7 @@ Nach etwa zehn Ingests laufen lassen. Lint meldet auch Widersprüche zwischen Qu
 
 ## Warum nicht einfach …?
 
-| | Lose Notizen | Chat mit Dokumenten (RAG) | Dieses System |
-|---|---|---|---|
-| Wissen wird verdichtet | nein | nein, jede Frage startet bei null | ja, einmal pro Quelle |
-| Aussagen mit Beleg | nur manuell | Textstellen, ohne Struktur | `[[Wikilinks]]` |
-| Widersprüche erkennen | nein | nein | Lint meldet sie |
-| Lesbar ohne KI | ja | nein | ja, reines Markdown |
+<p align="center"><img src="assets/compare.svg" alt="Vergleich mit losen Notizen und Chat mit Dokumenten: Second Brain Skills verdichtet Wissen, belegt Aussagen per Wikilink, erkennt Widersprüche per Lint, bleibt als Markdown lesbar und speichert gute Antworten" width="900"></p>
 
 ## Unter der Haube
 
