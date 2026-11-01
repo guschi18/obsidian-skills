@@ -1,98 +1,155 @@
-# 🧠 Second Brain Skills
+<h1 align="center">
+  <picture>
+    <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.svg">
+    <img src="assets/banner.svg" alt="Second Brain Skills: Quellen rein, verlinktes Wiki raus" width="100%">
+  </picture>
+</h1>
 
-> **Vier Skills. Ein Schema. Ein lokaler Wissensgraph.**
-> Obsidian * Markdown * LLM-Workflows - aufgebaut als wiederverwendbares Skill-Set fuer persoenliche Knowledge Bases.
-> Die strukturierte Arbeitsgrundlage, um rohe Quellen in ein verlinktes, wartbares Second Brain zu verwandeln.
+<p align="center">
+  <b>Wirf Quellen rein. Bekomm ein Wiki raus, das sich selbst pflegt.</b><br>
+  Vier Agent-Skills machen aus PDFs, Artikeln und Transkripten einen verlinkten Obsidian-Wissensgraphen.<br>
+  Du befragst ihn, er meldet Widersprüche.
+</p>
 
-![Status](https://img.shields.io/badge/status-active-brightgreen)
-![Obsidian](https://img.shields.io/badge/obsidian-vault-7C3AED)
-![Skills](https://img.shields.io/badge/skills-4-2563EB)
-![Language](https://img.shields.io/badge/language-DE%20%7C%20EN-111827)
+```bash
+git clone https://github.com/guschi18/obsidian-skills.git && cp -r obsidian-skills/second-brain* ~/.claude/skills/
+```
 
-## Worum es geht
+<p align="center">
 
-Dieses Repository enthaelt lokale Skills fuer den Aufbau und die Pflege eines Obsidian-basierten Second Brains. Es ist kein fertiger Notizbestand, sondern ein Werkzeugkasten: Die Skills helfen dabei, einen neuen Vault zu initialisieren, Quellen zu verarbeiten, Fragen gegen das Wiki zu beantworten und die Qualitaet des Wissensgraphen regelmaessig zu pruefen.
+[**⚡ Starten**](#-in-60-sekunden-starten) · [🔍 Ergebnis](#-was-dabei-herauskommt) · [💬 Session](#-so-fühlt-sich-das-an) · [🧩 Skills](#enthaltene-skills) · [❓ FAQ](#-faq)
 
-Das System folgt dem **LLM Wiki Pattern**: Ein KI-Agent arbeitet als Bibliothekar. Rohe Quellen bleiben unveraendert in `raw/`, waehrend das eigentliche Wissen als strukturierte, verlinkte Markdown-Seiten in `wiki/` entsteht.
+</p>
 
-Dadurch wird aus einzelnen Artikeln, Transkripten, PDFs oder Notizen ein navigierbarer Wissensgraph:
+<p align="center">
+  <img alt="Obsidian" src="https://img.shields.io/badge/obsidian-vault-7C3AED">
+  <img alt="Skills" src="https://img.shields.io/badge/skills-4-2563EB">
+  <img alt="Sprache" src="https://img.shields.io/badge/language-DE%20%7C%20EN-111827">
+</p>
 
-- Welche Quellen stuetzen eine bestimmte Aussage?
-- Welche Konzepte tauchen in mehreren Quellen wieder auf?
-- Welche Personen, Organisationen, Produkte oder Tools sind miteinander verbunden?
-- Welche Synthesen, Vergleiche und Analysen sind bereits entstanden?
-- Wo fehlen Querverweise, Seiten oder aktuelle Quellen?
+| 🪄 **Einrichten** | 📥 **Befüllen** | 💬 **Abfragen** | 🩺 **Verbessern** |
+|:---:|:---:|:---:|:---:|
+| `second-brain` | `second-brain-ingest` | `second-brain-query` | `second-brain-lint` |
+| Vault anlegen | `raw/` → `wiki/` | Antwort mit Belegen | Fehler und Lücken finden |
+
+## ⚡ In 60 Sekunden starten
+
+```bash
+git clone https://github.com/guschi18/obsidian-skills.git
+cp -r obsidian-skills/second-brain* ~/.claude/skills/
+```
+
+<details>
+<summary>Windows (PowerShell)</summary>
+
+```powershell
+git clone https://github.com/guschi18/obsidian-skills.git
+Copy-Item -Recurse obsidian-skills\second-brain* $HOME\.claude\skills\
+```
+
+</details>
+
+Dann in Claude Code (oder einem anderen Agenten mit Skill-Pfad):
+
+| Du sagst | Es passiert |
+|---|---|
+| „Richte ein Second Brain ein" | Wizard legt den Vault an (Name, Ort, Thema, Agent-Configs) |
+| „Ich habe etwas in `raw/` gelegt" | Ingest fasst zusammen, fragt nach Schwerpunkten, baut Wiki-Seiten |
+| „Was weiß ich über X?" | Query antwortet aus dem Wiki, jede Aussage mit `[[Wikilink]]` belegt |
+| „Mach einen Health-Check" | Lint listet Fehler, Warnungen und Lücken, auf Wunsch mit Fixes |
+
+## 🔍 Was dabei herauskommt
+
+Eine einzige Datei geht rein:
+
+```text
+raw/karpathy-llm-wiki.md        ← Web-Clip, unverändert
+```
+
+Nach `second-brain-ingest` sieht dein Vault so aus (Beispiel):
+
+```text
+wiki/
+├── sources/
+│   └── karpathy-llm-wiki.md    ← Zusammenfassung + Kernaussagen
+├── entities/
+│   └── Andrej Karpathy.md      ← Person, neu angelegt
+├── concepts/
+│   └── LLM Wiki Pattern.md     ← Konzept, neu angelegt
+├── index.md                    ← Master-Katalog, 3 neue Einträge
+└── log.md                      ← "## [2026-11-01] ingest | Karpathy LLM Wiki"
+```
+
+Und so sieht eine erzeugte Seite aus:
+
+```markdown
+---
+tags: [llm, wissensmanagement]
+sources: [karpathy-llm-wiki.md]
+created: 2026-11-01
+updated: 2026-11-01
+---
+
+# LLM Wiki Pattern
+
+Ein Agent pflegt ein Markdown-Wiki, statt bei jeder Frage Rohtexte neu zu durchsuchen.
+
+## Aus den Quellen
+- Wissen wird einmal verdichtet und danach nur noch erweitert ([[karpathy-llm-wiki]])
+
+## Verbunden mit
+- [[Andrej Karpathy]]
+```
+
+Jede weitere Quelle ergänzt diese Seiten. Widersprüche werden mit beiden Quellen vermerkt, nicht überschrieben.
+
+## 💬 So fühlt sich das an
+
+```text
+Du:     Ich habe karpathy-llm-wiki.md in raw/ gelegt.
+Agent:  Kernaussagen: 1. Wissen wird einmal verdichtet. 2. Ein Agent pflegt Index
+        und Querverweise. Soll ich etwas betonen?
+Du:     Betone Punkt 2.
+Agent:  Fertig: 1 Quellenseite, 1 Entität, 1 Konzept, Index und Log aktualisiert.
+
+Du:     Was weiß ich über das LLM Wiki Pattern?
+Agent:  Laut [[karpathy-llm-wiki]] wird Wissen einmal verdichtet und nur noch
+        erweitert, siehe [[LLM Wiki Pattern]] und [[Andrej Karpathy]].
+        Als Synthese-Seite speichern?
+```
 
 ## Enthaltene Skills
 
-| Skill | Rolle | Wofuer er wichtig ist |
+| Skill | Macht | Auslöser |
 |---|---|---|
-| `second-brain` | Onboarding Wizard | Erstellt einen neuen Obsidian-Vault mit Verzeichnisstruktur, Index, Log und Agent-Konfigurationen |
-| `second-brain-ingest` | Quellenverarbeitung | Verarbeitet Dateien aus `raw/` zu Quellen-, Entitaeten- und Konzeptseiten im Wiki |
-| `second-brain-query` | Wissensabfrage | Beantwortet Fragen gegen `wiki/index.md`, Wiki-Seiten und optional lokale Suche mit `qmd` |
-| `second-brain-lint` | Qualitaetspruefung | Findet kaputte Wikilinks, Waisen-Seiten, Widersprueche, veraltete Claims und fehlende Querverweise |
+| 🪄 `second-brain` | Legt den Vault an: Ordner, Index, Log, Agent-Config | „Second Brain einrichten" |
+| 📥 `second-brain-ingest` | Fasst `raw/` zusammen, fragt nach Schwerpunkten, baut Wiki-Seiten | „ich habe etwas in raw/ abgelegt" |
+| 💬 `second-brain-query` | Antwortet aus dem Wiki, jede Aussage per `[[Wikilink]]` belegt | „was weiß ich über X?" |
+| 🩺 `second-brain-lint` | Findet kaputte Links, Waisen, Widersprüche, Lücken | „health check" |
 
-Zusammen bilden diese Skills einen vollstaendigen Arbeitszyklus: **einrichten, befuellen, abfragen, verbessern**.
+## Warum nicht einfach …?
 
-## Perfekt fuer
+| | Lose Notizen | Chat mit Dokumenten (RAG) | Dieses System |
+|---|---|---|---|
+| Wissen wird verdichtet | nein | nein, jede Frage startet bei null | ja, einmal pro Quelle |
+| Aussagen mit Beleg | nur manuell | Textstellen, ohne Struktur | `[[Wikilinks]]` |
+| Widersprüche erkennen | nein | nein | Lint meldet sie |
+| Lesbar ohne KI | ja | nein | ja, reines Markdown |
 
-Diese Skills sind besonders nuetzlich fuer:
+## Unter der Haube
 
-- persoenliche Obsidian-Wissensdatenbanken
-- Recherche-Brains zu Fachthemen, Projekten oder Maerkten
-- LLM-gestuetzte Arbeit mit kontrollierten lokalen Quellen
-- Aufbau eines versionierten Knowledge Graphs aus Webartikeln, PDFs, Transkripten und Notizen
-- Teams oder Einzelpersonen, die Agenten mit klaren Wiki-Regeln arbeiten lassen wollen
-- wiederholbare Workflows fuer Claude Code, Codex, Cursor oder Gemini CLI
-
-## Obsidian als lokaler Wissensgraph
-
-Der Ziel-Vault ist fuer Obsidian gebaut. Die Skills erzeugen und pflegen eine klare Wiki-Struktur:
-
-- Quellen werden als eigene Summary-Seiten dokumentiert.
-- Entitaeten und Konzepte erhalten eigene Seiten.
-- Alle internen Beziehungen laufen ueber `[[wikilinks]]`.
-- `wiki/index.md` bleibt der Master-Katalog aller Seiten.
-- `wiki/log.md` protokolliert jede Operation chronologisch.
-- `wiki/synthesis/` sammelt wertvolle Vergleiche, Analysen und Querverbindungen.
-
-Statt Informationen nur als lose Notizen abzulegen, entsteht ein lokales Wissenssystem, das von LLMs gezielt gelesen, erweitert und zitiert werden kann.
-
-## Projektstruktur
-
-```text
-.
-+-- second-brain/
-|   +-- SKILL.md                      # Onboarding Wizard fuer neue Vaults
-|   +-- scripts/
-|   |   +-- onboarding.sh             # Erstellt raw/, wiki/, output/ und Basisdateien
-|   +-- references/
-|       +-- wiki-schema.md            # Kanonisches Schema fuer alle Ziel-Vaults
-|       +-- tooling.md                # Empfohlene CLI-Tools
-|       +-- agent-configs/
-|           +-- claude-code.md        # Vorlage fuer CLAUDE.md
-|           +-- codex.md              # Vorlage fuer AGENTS.md
-|           +-- cursor.md             # Vorlage fuer .cursor/rules/second-brain.mdc
-|           +-- gemini.md             # Vorlage fuer GEMINI.md
-+-- second-brain-ingest/
-|   +-- SKILL.md                      # Verarbeitet neue Quellen in Wiki-Seiten
-+-- second-brain-query/
-|   +-- SKILL.md                      # Beantwortet Fragen aus dem lokalen Wiki
-+-- second-brain-lint/
-    +-- SKILL.md                      # Prueft Wiki-Gesundheit und Konsistenz
-```
-
-## Wie das Wissen modelliert wird
-
-Ein mit diesen Skills erzeugter Vault besteht aus drei Hauptbereichen:
+<details>
+<summary><b>Vault-Aufbau und Seitenformat</b></summary>
 
 | Ordner | Bedeutung |
 |---|---|
-| `raw/` | Unveraenderte Originalquellen, z. B. Web-Clips, PDFs, Transkripte oder Notizen |
-| `wiki/` | Strukturierter Wissensgraph, den der LLM-Agent pflegt |
-| `output/` | Reports, Query-Ergebnisse und generierte Artefakte |
+| `raw/` | Unveränderte Originalquellen (Web-Clips, PDFs, Transkripte, Notizen) |
+| `wiki/` | Wissensgraph, den der Agent pflegt |
+| `output/` | Reports, Query-Ergebnisse, generierte Artefakte |
 
-Jede Wiki-Seite besitzt YAML-Frontmatter:
+Unterordner von `wiki/`: `sources/`, `entities/`, `concepts/`, `synthesis/`, dazu `index.md` und `log.md`.
+
+Jede Seite beginnt mit YAML-Frontmatter:
 
 ```yaml
 ---
@@ -103,121 +160,45 @@ updated: YYYY-MM-DD
 ---
 ```
 
-Die Wiki-Unterstruktur trennt die Rollen klar:
+</details>
 
-- `wiki/sources/` - eine Zusammenfassungsseite pro Quelle
-- `wiki/entities/` - Personen, Organisationen, Produkte und Tools
-- `wiki/concepts/` - Ideen, Frameworks, Muster und Theorien
-- `wiki/synthesis/` - Analysen, Vergleiche und uebergreifende Zusammenhaenge
+<details>
+<summary><b>Agenten und Tools</b></summary>
 
-## Workflow
-
-Der typische Ablauf ist bewusst einfach:
-
-1. **Vault anlegen** mit `second-brain`
-2. **Quellen sammeln** in `raw/`, idealerweise mit dem Obsidian Web Clipper
-3. **Quellen ingestieren** mit `second-brain-ingest`
-4. **Fragen stellen** mit `second-brain-query`
-5. **Wiki pruefen** mit `second-brain-lint`
-
-Der wichtigste Designpunkt: Quellen bleiben stabil, das Wiki wird kontinuierlich verdichtet.
-
-## Agenten-Unterstuetzung
-
-Der Onboarding-Skill kann Konfigurationsdateien fuer mehrere Agenten erzeugen:
-
-| Agent | Datei im Ziel-Vault |
+| Agent | Datei im Vault |
 |---|---|
 | Claude Code | `CLAUDE.md` |
 | Codex | `AGENTS.md` |
 | Cursor | `.cursor/rules/second-brain.mdc` |
 | Gemini CLI | `GEMINI.md` |
 
-Alle Templates verwenden dasselbe `wiki-schema.md`. Dadurch arbeiten verschiedene Agenten nach denselben Regeln und erzeugen kompatible Wiki-Seiten.
+Optionale Tools: Obsidian Web Clipper (Quellen nach `raw/`), `summarize`, `qmd` (Suche ab ca. 100 Seiten), `agent-browser`.
 
-## Beispiel-Fragen an ein erzeugtes Brain
+</details>
 
-- Was weiss mein Wiki bereits ueber ein bestimmtes Unternehmen?
-- Welche Quellen erwaehnen ein bestimmtes Konzept?
-- Welche Tools werden in mehreren Artikeln verglichen?
-- Welche Aussagen widersprechen sich zwischen zwei Quellen?
-- Welche Themen sind haeufig erwaehnt, aber noch nicht gut ausgearbeitet?
-- Welche Synthese sollte aus den vorhandenen Notizen gespeichert werden?
+## ❓ FAQ
 
-## Quickstart - In 3 Schritten einsatzbereit
+<details>
+<summary><b>Braucht es Obsidian?</b></summary>
 
-### Schritt 1 - Skills installieren oder in den Skill-Pfad legen
+Nein. Das Ergebnis ist reines Markdown mit `[[Wikilinks]]`. Obsidian zeigt nur den Graphen schöner an.
 
-Dieses Repository ist als lokales Skill-Verzeichnis gedacht. Die Ordner `second-brain`, `second-brain-ingest`, `second-brain-query` und `second-brain-lint` muessen im Skill-Pfad des verwendeten Agenten liegen.
+</details>
 
-### Schritt 2 - Neuen Vault initialisieren
+<details>
+<summary><b>Kann der Agent meine Quellen verändern?</b></summary>
 
-Starte den Skill `second-brain`. Der Wizard fragt nacheinander:
+Nein. `raw/` ist unveränderlich, `wiki/log.md` ist append-only.
 
-- Name des Vaults
-- Speicherort
-- Thema oder Domain
-- gewuenschte Agent-Konfigurationen
-- optionale CLI-Tools
+</details>
 
-Danach erzeugt das Onboarding die Grundstruktur:
+<details>
+<summary><b>Wann lohnt sich Lint, wann `qmd`?</b></summary>
 
-```text
-raw/
-raw/assets/
-wiki/
-wiki/sources/
-wiki/entities/
-wiki/concepts/
-wiki/synthesis/
-output/
-wiki/index.md
-wiki/log.md
-```
+Lint nach etwa zehn Ingests. `qmd` (`npm i -g @tobilu/qmd`) ab etwa 100 Seiten. Query nutzt es automatisch.
 
-### Schritt 3 - Quellen verarbeiten und abfragen
+</details>
 
-Lege Quellen in `raw/` ab und fuehre danach `second-brain-ingest` aus. Sobald die ersten Wiki-Seiten entstanden sind, kann `second-brain-query` Fragen gegen den lokalen Wissensbestand beantworten.
+Gefällt dir das Setup? Ein ⭐ auf GitHub hilft anderen, es zu finden.
 
-Nach groesseren Aenderungen oder etwa alle zehn Ingests sollte `second-brain-lint` laufen.
-
-## Empfohlene Tools
-
-| Tool | Zweck |
-|---|---|
-| Obsidian Web Clipper | Speichert Webartikel sauber als Markdown in `raw/` |
-| `summarize` | Fasst Links, Dateien und Medien per CLI zusammen |
-| `qmd` | Lokale Suche fuer groessere Markdown-Wikis |
-| `agent-browser` | Browser-Automation fuer Recherchefaelle, in denen Standardtools nicht reichen |
-
-Die Tools sind optional, aber fuer wachsende Vaults sinnvoll. Der Skill funktioniert auch ohne Datenbank oder Server.
-
-## GitHub-Ziel
-
-Dieses Repository repraesentiert den wiederverwendbaren Skill-Kern:
-
-- Skill-Definitionen fuer Setup, Ingest, Query und Lint
-- das kanonische Wiki-Schema
-- Agent-Konfigurationsvorlagen fuer mehrere LLM-Umgebungen
-- ein Onboarding-Script fuer neue Obsidian-Vaults
-- Tooling-Hinweise fuer lokale Recherche- und Suchworkflows
-
-Nicht enthalten sind persoenliche Vault-Inhalte, private Quellen, lokale Obsidian-Einstellungen oder projektspezifische Wissensdatenbanken.
-
-## CLAUDE.md – Claude Code Integration
-
-Dieses Repository enthaelt eine `CLAUDE.md` fuer Claude Code. Sie steuert, wie der Agent bei Wissensfragen vorgeht:
-
-```md
-# Claude Anweisungen
-
-Wenn der User eine Frage zu seinem Wissen stellt oder etwas sucht, schau zuerst welche Brains
-es unter `D:\Brains\` gibt, lies die `wiki\index.md` der passenden Brains und folge dem
-Query-Skill unter `{brain}\.claude\skills\second-brain-query\SKILL.md`.
-```
-
-**Was das bewirkt:** Statt allgemein zu antworten, navigiert Claude Code zuerst durch den lokalen Brain-Graphen und zieht seine Antworten aus dem konkreten Wissensbestand. So bleibt jede Antwort an echte, selbst gepflegte Quellen gebunden.
-
-## Hinweis
-
-Diese Skills erzeugen und pflegen lokale Wissensgraphen. Die Qualitaet der Antworten haengt von den eingepflegten Quellen, der Konsistenz des Wikis und regelmaessigen Lint-Pruefungen ab. Fuer fachlich verbindliche Entscheidungen sollten relevante Originalquellen immer mitgeprueft werden.
+*Antworten sind nur so gut wie deine Quellen. Prüfe bei wichtigen Entscheidungen die Originale.*
